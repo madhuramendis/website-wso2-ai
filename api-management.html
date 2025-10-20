@@ -1,0 +1,882 @@
+---
+layout: homepage
+title: "API Management for AI | WSO2 API Manager"
+permalink: /api-management/
+description: "Control and govern AI API usage with WSO2 API Manager. Deploy AI models as APIs, manage LLM costs, and enable secure machine-to-machine collaboration with built-in governance."
+image: "https://wso2.cachefly.net/wso2/sites/all/image_resources/unlock-the-power-of-ai-apim-sm.png"
+image_alt: "Unlock the Power of AI Without Losing Control"
+keywords: [API management, AI APIs, LLM governance, machine-to-machine collaboration, API security, API gateway, AI cost management]
+canonical: https://wso2.ai/api-management/
+robots: index,follow
+og_type: article
+twitter_card: summary_large_image
+date_published: 2025-10-10
+date_modified: 2025-10-10
+author_name: "WSO2 Team"
+
+og_site_name: "WSO2"
+twitter_creator: "@wso2"
+
+faq:
+  - q: "How does WSO2 API Manager help with AI APIs?"
+    a: "WSO2 API Manager provides governance, security, and cost management for AI APIs. It helps deploy AI models as APIs, manage LLM costs, and enable secure machine-to-machine collaboration."
+  - q: "What are the key features for AI API management?"
+    a: "Key features include AI model deployment, LLM cost tracking, token-based rate limiting, API security, machine-to-machine collaboration, and analytics for AI API usage."
+
+qapage:
+  question: "What is WSO2 API Manager's role in AI governance?"
+  answer: "WSO2 API Manager serves as a control plane for AI-driven API ecosystems, enabling organizations to govern AI API usage, manage costs, and ensure secure access while providing analytics and monitoring capabilities."
+
+breadcrumbs:
+  - name: "Home"
+    url: "/"
+  - name: "Products"
+    url: "/products/"
+  - name: "API Management"
+    url: "/api-management/"
+
+speakable: ".HeaderN h1, .cCodeforAISection p"
+
+itemlist:
+  - name: "AI Model Deployment"
+    url: "/api-management/#model-deployment"
+  - name: "LLM Cost Management"
+    url: "/api-management/#llm-costs"
+  - name: "Token-based Rate Limiting"
+    url: "/api-management/#rate-limiting"
+  - name: "API Security"
+    url: "/api-management/#security"
+  - name: "M2M Collaboration"
+    url: "/api-management/#m2m"
+  - name: "AI API Analytics"
+    url: "/api-management/#analytics"
+  - name: "API Gateway"
+    url: "/api-management/#gateway"
+  - name: "Developer Portal"
+    url: "/api-management/#devportal"
+
+geo:
+  name: "WSO2 Headquarters"
+  latitude: 6.927079
+  longitude: 79.861244
+  address: "42 Hotel Road"
+  region: "LK-11"
+  locality: "Colombo"
+  country: "LK"
+  postal_code: "00300"
+
+hreflang:
+  - lang: en
+    url: https://wso2.ai/api-management/
+---
+
+
+
+<style>
+
+    .learn-more {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    word-spacing: 2px;
+    color: #ff7300!important;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+.cPaddintTopZero{padding-top:0;}
+.learn-more:hover {
+    color: #FFFFFF!important;
+    text-decoration: none;
+}
+.arrow-icon:hover{  
+    color: #FFFFFF!important;
+    text-decoration: none;}
+.cResourceSection h2{    color:#ffffff!important; font-weight: 700!important; margin-top: 40px;
+    font-size: 48px !important;
+    line-height: 60px !important;}
+    .cResourceSection p{text-align: center!important;}
+.arrow-icon {
+    margin-left: 8px;
+    width: 28px;
+    height: 19px;
+    transition: transform 0.3s ease-in-out;
+    color: #ff7300!important;
+    margin-top: 4px;
+}
+.cGrayBG{background-color:#14171e !important;}
+.cTabRow{margin-top: 70px;}
+    .mobileonly{display:none;}
+    a.cButtonN_StandardOutline{width:auto!important;}
+    span.SubHeader{color: #fff !important; font-size: 1.8rem !important; line-height: 2.4rem !important; font-weight: 400 !important; margin-bottom: 1rem; display:inline-block;}
+    a.cButtonN_Standard:hover{color:#000!important; border:0;}
+    .cCodeforAISection h3{    color: #c3c2c2 !important;}
+    .cCodeforAISection p{text-align:left;}
+    .cPaddintTop{padding-top: 8rem;}
+    a.cButtonN_Standard {background: linear-gradient(90deg, #e68d4f 15%, #dc7d4d 30%, #e16231 70%); border: none; padding: 11px 25px !important; color: #ffffff !important; width: auto !important; }
+    .cFirstSetBlock{
+        background: radial-gradient(circle at 100% 100%, #030101 0, #030101 14px, transparent 14px) 0% 0%/15px 15px no-repeat,
+            radial-gradient(circle at 0 100%, #030101 0, #030101 14px, transparent 14px) 100% 0%/15px 15px no-repeat,
+            radial-gradient(circle at 100% 0, #030101 0, #030101 14px, transparent 14px) 0% 100%/15px 15px no-repeat,
+            radial-gradient(circle at 0 0, #030101 0, #030101 14px, transparent 14px) 100% 100%/15px 15px no-repeat,
+            linear-gradient(#030101, #030101) 50% 50%/calc(100% - 2px) calc(100% - 30px) no-repeat,
+            linear-gradient(#030101, #030101) 50% 50%/calc(100% - 30px) calc(100% - 2px) no-repeat,
+            linear-gradient(90deg, #1b1818 0%, rgba(62,60,60,0.89) 49%, #111212 100%);
+border-radius: 15px;
+padding: 41px;
+box-sizing: border-box;margin: 0 0rem 2rem;}
+.cAlignLeft{text-align:left!important;}
+.cSubPara p{text-align: center;}
+.cAlignLeft p{text-align:left!important;}
+
+.cFirstSetBlock ol li{color:#999!important;}
+.cFirstSetBlock p{font-size: 16px!important; line-height: 26px !important; margin-bottom: 0.5rem;color:#999!important;}
+
+.HeaderN p{color:#999!important;font-weight: 400!important;}
+.arrow-icon {
+    margin-left: 8px;
+    width: 28px;
+    height: 19px;
+    transition: transform 0.3s ease-in-out;
+    color: #ff7300!important;
+    margin-top: 4px;
+}
+.cFeatureBullets p{    border-image: linear-gradient(0.01turn, #ffffff6e, #000000, #f5e32000);
+    border-image-slice: 1;color:#999!important;
+    border-bottom: 1px solid #c1c1c1;
+    padding-bottom: 10px;
+    width: 100%;}
+    .cFirstSetBlock h4{padding-top: 1rem; margin-bottom: 0.5rem;}
+    img.img-fluid{border-radius: 10px;}
+    .cInAshBox{ background-color: #14171e !important; margin-top: 3rem;background: radial-gradient(circle at 100% 100%, #14171e 0, #14171e 14px, transparent 14px) 0% 0% / 15px 15px no-repeat, radial-gradient(circle at 0 100%, #14171e 0, #14171e 14px, transparent 14px) 100% 0% / 15px 15px no-repeat, radial-gradient(circle at 100% 0, #14171e 0, #14171e 14px, transparent 14px) 0% 100% / 15px 15px no-repeat, radial-gradient(circle at 0 0, #14171e 0, #14171e 14px, transparent 14px) 100% 100% / 15px 15px no-repeat, linear-gradient(#14171e, #14171e) 50% 50% / calc(100% - 2px) calc(100% - 30px) no-repeat, linear-gradient(#14171e, #14171e) 50% 50% / calc(100% - 30px) calc(100% - 2px) no-repeat, linear-gradient(3deg, rgb(97 87 78 / 35%) 0%, #202527 100%);
+    border-radius: 15px;
+    padding: 36px 25px;
+    box-sizing: border-box;}
+    .cInAshBox h4{    font-size: 1.1rem !important;margin-top: 10px;margin-bottom: 0; min-height: 68px;
+        line-height: 1.6rem !important; color:#d1cfcf !important; font-weight: 400!important;}
+        .cInAshBox p{text-align: center!important; margin-bottom: 0;}
+        .cInAshBoxAI{ background-color: #14171e !important; margin-top: 3rem;background: radial-gradient(circle at 100% 100%, #14171e 0, #14171e 14px, transparent 14px) 0% 0% / 15px 15px no-repeat, radial-gradient(circle at 0 100%, #14171e 0, #14171e 14px, transparent 14px) 100% 0% / 15px 15px no-repeat, radial-gradient(circle at 100% 0, #14171e 0, #14171e 14px, transparent 14px) 0% 100% / 15px 15px no-repeat, radial-gradient(circle at 0 0, #14171e 0, #14171e 14px, transparent 14px) 100% 100% / 15px 15px no-repeat, linear-gradient(#14171e, #14171e) 50% 50% / calc(100% - 2px) calc(100% - 30px) no-repeat, linear-gradient(#14171e, #14171e) 50% 50% / calc(100% - 30px) calc(100% - 2px) no-repeat, linear-gradient(3deg, rgb(97 87 78 / 35%) 0%, #202527 100%);
+    border-radius: 15px;
+    padding: 36px 25px;
+    box-sizing: border-box;}
+    .cInAshBoxAI h4{    font-size: 1.1rem !important;margin-top: 10px;margin-bottom: 0; min-height: 68px;
+        line-height: 1.6rem !important; color:#d1cfcf !important; font-weight: 400!important;}
+        .cInAshBoxAI p{text-align: center!important; margin-bottom: 0;    min-height: 146px;}
+        .cTwoPercent{width: 18%; float: left; margin: 0 1%;}
+  
+
+
+
+</style>
+
+<section class="HeaderN">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-7">
+        <!-- <span>Devant by WSO2</span> -->
+        <h1>Unlock the <span class="Gtextm">Power of AI</span> Without Losing Control</h1>
+         <!-- <span class="SubHeader">Build Smarter APIs. Empower Smarter Systems.</span> -->
+
+        <p>Use WSO2 API Manager as the control plane for AI-driven API ecosystems to help you design smarter APIs, govern AI usage, and enable easy machine-to-machine collaboration. Whether it's exposing your APIs as tools for AI agents or using AI to accelerate design and governance, WSO2 brings structure, security, and automation to modern API development.</p>
+       
+        <div class="col-sm-12 col-md-6 col-lg-6 mobileonly" style="text-align: center; padding: 1rem;">
+          <video style=" width: 100%; max-width: 430px;    mix-blend-mode: lighten;" class="aos-init aos-animate" data-aos="zoom-in" autoplay="" loop="" muted="">
+            <source src="https://wso2.cachefly.net/wso2/sites/all/image_resources/APIMForAI.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="col-sm-12 col-md-12 col-lg-12 cPaddingZero">
+          <a target="_blank" rel="noopener" class="cButtonN_Standard textcolor secondcta" href="https://wso2.ai" aria-label="Explore Our AI Vision">Explore Our AI Vision</a>&nbsp;&nbsp;
+          <a rel="noopener" class="cButtonN_StandardOutline" href="https://wso2.com/contact/?ref=apim-ai" target="_blank" aria-label="Talk to an Expert">Talk to an Expert</a>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-5 col-lg-5 deskonly" style="text-align: center; padding-top: 40px;">
+        <video style=" width: 100%; max-width: 430px;    mix-blend-mode: lighten;" class="aos-init aos-animate" data-aos="zoom-in" autoplay="" loop="" muted="">
+          <source src="https://wso2.cachefly.net/wso2/sites/all/image_resources/APIMForAI.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</section>
+
+<section class="cScrollSectionMobile cCodeforAISection" style="padding: 0rem 0 0rem 0;">
+    <div class="container">
+        <div class="row">
+           <div class="col-sm-12 col-md-12 col-lg-12">
+     <div class="d-flex justify-content-center list-unstyled" style="width: 100%; min-height: 96px;">
+      <span class="cCodeIocn CodeforAI">API Management for <span class="pcolorhigh">AI</span></span>
+   </div>
+   <div class="col-sm-12 col-md-12 col-lg-12 cAlignCenter cSubPara">
+    <div class="clearfix"></div>
+    <p>WSO2 API Manager helps you govern GenAI API usage, expose APIs as tools for AI agents using MCP, and manage all AI integrations centrally with built-in security, routing, analytics, and a searchable hub for discoverability.</p>
+ </div>
+ <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
+  
+ </div>
+</div>
+</div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12 cDesign">
+     
+        
+<div class="cMainContentBlock cTransparentBG text-center">
+  <h2 id="AI-Gateway-Govern-and-Guardrail-Your-AI-APIs">
+    AI Gateway - Govern and Guardrail Your AI APIs
+  </h2>
+  
+  <!-- Centered HR -->
+  <hr class="mx-auto my-3 w-25">
+
+  <p class="text-center">
+    AI is an essential tool in creating digital experiences, and you need an AI API gateway capable of managing AI APIs.
+    GenAI unlocks powerful opportunities to transform, innovate, and scale your business operations. Easily adopt AI services
+    with WSO2’s AI gateway capabilities. Govern and gain actionable insights into AI utilization and optimize your AI investments.
+  </p>
+</div>
+
+
+
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="row cTabRow">
+      <div class="col-sm-12">
+        <ul class="nav nav-pills d-flex justify-content-center list-unstyled cTabControls cSecondTab" id="pills-tab1" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-firsttab-tab1" data-bs-toggle="pill" data-bs-target="#pills-firsttab2" type="button" role="tab" aria-controls="pills-firsttab2" aria-selected="true">Control</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-secondtab-tab1" data-bs-toggle="pill" data-bs-target="#pills-secondtab2" type="button" role="tab" aria-controls="pills-secondtab2" aria-selected="false">Dynamic Routing</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-thirdtab-tab1" data-bs-toggle="pill" data-bs-target="#pills-thirdtab2" type="button" role="tab" aria-controls="pills-thirdtab2" aria-selected="false">Mediation</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-thirdtab-tab1x" data-bs-toggle="pill" data-bs-target="#pills-thirdtab2x" type="button" role="tab" aria-controls="pills-thirdtab2x" aria-selected="false">Guardrails</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-forthtab-tab1x" data-bs-toggle="pill" data-bs-target="#pills-forthtab2x" type="button" role="tab" aria-controls="pills-forthtab2x" aria-selected="false">Analytics</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Tab content -->
+    <div class="row">
+      <div class="cTabWrapper cBlackBG aos-init" data-aos="fade-up" style="margin-bottom: 0 !important;">
+        <div class="col-sm-12 cPaddingZero">
+          <div class="tab-content" id="pills-tabContent1">
+            <!-- First Tab Content -->
+            <div class="tab-pane fade show active" id="pills-firsttab2" role="tabpanel" aria-labelledby="pills-firsttab-tab1">
+              <div class="row">
+                <div class="col-sm-12 col-md-4">
+                  <h3>Token-based rate limiting and fine-grained usage controls</h3>
+                  <p>In addition to enterprise-grade API security features—such as authentication, authorization, and rate limiting—Bijira provides token-based rate limiting and fine-grained usage controls for AI APIs. This includes per-token quotas, user-level throttling, and precise control over AI Usage.</p>
+                  <a href="https://wso2.com/api-manager/usecases/ai-gateway/" class="learn-more cSaaS" aria-label="Learn More About the AI Gateway">Learn More About the AI Gateway
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="24" viewBox="0 0 30 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="4" y1="12" x2="24" y2="12"></line>
+                      <polyline points="16 5 24 12 16 19"></polyline>
+                    </svg>
+                  </a>
+                </div>
+                <div class="col-sm-12 col-md-8">
+                  <div class="cImageHolder">
+                    <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/token-based-rate-limiting.webp" alt="Token-based rate limiting and fine-grained usage controls" class="img-fluid" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Second Tab Content -->
+            <div class="tab-pane fade" id="pills-secondtab2" role="tabpanel" aria-labelledby="pills-secondtab-tab1">
+              <div class="row">
+                <div class="col-sm-12 col-md-4">
+                  <h3>Multi-provider, multi-model AI routing</h3>
+                  <p>Dynamically route requests across different AI models for cost, performance, or fallback needs.</p>
+                  <a href="https://wso2.com/api-manager/usecases/ai-gateway/" class="learn-more cSaaS" aria-label="Learn More About the AI Gateway">Learn More About the AI Gateway
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="24" viewBox="0 0 30 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="4" y1="12" x2="24" y2="12"></line>
+                      <polyline points="16 5 24 12 16 19"></polyline>
+                    </svg>
+                  </a>
+                </div>
+                <div class="col-sm-12 col-md-8">
+                  <div class="cImageHolder">
+                    <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/Multi-provider.webp" alt="Multi-provider, multi-model AI routing" class="img-fluid" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Third Tab Content -->
+            <div class="tab-pane fade" id="pills-thirdtab2" role="tabpanel" aria-labelledby="pills-thirdtab-tab1">
+              <div class="row">
+                <div class="col-sm-12 col-md-4">
+                  <h3>Prompt engineering with request/response mediation</h3>
+                  <p>Enhance prompts and standardize outputs with built-in templating, enrichment, and response shaping.</p>
+                  <a href="https://wso2.com/api-manager/usecases/ai-gateway/" class="learn-more cSaaS" aria-label="Learn More About the AI Gateway">Learn More About the AI Gateway
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="24" viewBox="0 0 30 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="4" y1="12" x2="24" y2="12"></line>
+                      <polyline points="16 5 24 12 16 19"></polyline>
+                    </svg>
+                  </a>
+                </div>
+                <div class="col-sm-12 col-md-8">
+                  <div class="cImageHolder">
+                    <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/Prompt-engineering.webp" alt="Prompt engineering with request/response mediation" class="img-fluid" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Fourth Tab Content -->
+            <div class="tab-pane fade" id="pills-thirdtab2x" role="tabpanel" aria-labelledby="pills-thirdtab-tab1x">
+              <div class="row">
+                <div class="col-sm-12 col-md-4">
+                  <h3>Govern AI Usage</h3>
+                  <p>Enforce policies and governance for responsible AI use, ensuring compliance, data protection, and ethical standards.</p>
+                  <a href="https://wso2.com/api-manager/usecases/ai-gateway/" class="learn-more cSaaS" aria-label="Learn More About the AI Gateway">Learn More About the AI Gateway
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="24" viewBox="0 0 30 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="4" y1="12" x2="24" y2="12"></line>
+                      <polyline points="16 5 24 12 16 19"></polyline>
+                    </svg>
+                  </a>
+                </div>
+                <div class="col-sm-12 col-md-8">
+                  <div class="cImageHolder">
+                    <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/Guardrails.webp" alt="Guardrails" class="img-fluid" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Fifth Tab Content -->
+            <div class="tab-pane fade" id="pills-forthtab2x" role="tabpanel" aria-labelledby="pills-forthtab-tab1x">
+              <div class="row">
+                <div class="col-sm-12 col-md-4">
+                  <h3>Monitor AI Activity and Performance</h3>
+                  <p>Gain real-time insights into AI interactions, usage trends, and performance to optimize operations and detect issues.</p>
+                  <a href="https://wso2.com/api-manager/usecases/ai-gateway/" class="learn-more cSaaS" aria-label="Learn More About the AI Gateway">Learn More About the AI Gateway
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="24" viewBox="0 0 30 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="4" y1="12" x2="24" y2="12"></line>
+                      <polyline points="16 5 24 12 16 19"></polyline>
+                    </svg>
+                  </a>
+                </div>
+                <div class="col-sm-12 col-md-8">
+                  <div class="cImageHolder">
+                    <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/AI-specific-analytics-and-guardrails.webp" alt="Analytics" class="img-fluid" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /tab-content -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Expose Your APIs as MCP Servers -->
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12 cDesign">
+        <div class="cMainContentBlock cTransparentBG cPaddintTop text-center">
+  <h2 id="Expose-Your-APIs-as-MCP-Servers">
+    Expose Your APIs as MCP Servers
+  </h2>
+
+  <!-- Centered HR -->
+  <hr class="mx-auto my-3 w-25">
+</div>
+
+      </div>
+    </div>
+
+    <div class="row">
+  <div class="cTabWrapper cBlackBG" style="margin-bottom: 0 !important;">
+    <div class="row">
+      <!-- Left Column -->
+      <div class="col-12 col-md-4">
+        <p>
+          Expose your APIs as tools for AI agents using the Model Context Protocol (MCP), 
+          enabling effortless discovery and interaction within agent workflows. 
+          You can either expose backend services directly or configure existing API 
+          proxies as MCP servers with minimal setup — making your APIs context-aware, 
+          discoverable, and ready for AI-driven automation.
+        </p>
+        <a href="https://wso2.com/library/blogs/expose-discover-and-manage-mcp-servers-with-bijira/" 
+           class="learn-more cSaaS" 
+           aria-label="Read the blog post" 
+           target="_blank" 
+           rel="noopener">
+          Read the blog post
+          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="24" 
+               viewBox="0 0 30 24" fill="none" stroke="currentColor" stroke-width="2" 
+               stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="12" x2="24" y2="12"></line>
+            <polyline points="16 5 24 12 16 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Right Column -->
+      <div class="col-12 col-md-8">
+        <div class="cImageHolder">
+          <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/expose-your-apis-as-mcp-servers.webp" 
+               alt="Expose Your APIs as MCP Servers" 
+               class="img-fluid" 
+               loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Manage Your MCP Servers -->
+  <div class="row">
+  <div class="col-12 cDesign">
+    <div class="cMainContentBlock cTransparentBG cPaddintTop text-center">
+      <h2>Manage Your MCP Servers</h2>
+
+      <!-- Centered HR -->
+      <hr class="mx-auto my-3 w-25">
+    </div>
+  </div>
+</div>
+
+
+   <div class="row">
+  <div class="cTabWrapper cBlackBG" style="margin-bottom: 0 !important;">
+    <div class="row">
+      <!-- Left Column -->
+      <div class="col-12 col-md-4">
+        <p>
+          You can onboard and manage external MCP servers by registering their URLs, 
+          enabling you to proxy them through the platform for centralized governance. 
+          Once connected, these servers can be securely exposed via managed API endpoints, 
+          with support for authentication, rate limiting, and observability policies. 
+          All registered MCP servers are visible in one place — the MCP Hub — 
+          where you can easily view, manage, and monitor them.
+        </p>
+      </div>
+
+      <!-- Right Column -->
+      <div class="col-12 col-md-8">
+        <div class="cImageHolder">
+          <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/MCP-Server-Proxy-UI-Policy.webp" 
+               alt="Manage Your MCP Servers" 
+               class="img-fluid" 
+               loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- MCP Hub -->
+   <div class="row">
+  <div class="col-12 cDesign">
+    <div class="cMainContentBlock cTransparentBG cPaddintTop text-center">
+      <h2>MCP Hub – Discoverable Portal for AI Agent Developers</h2>
+
+      <!-- Centered HR -->
+      <hr class="mx-auto my-3 w-25">
+    </div>
+  </div>
+</div>
+
+
+    <div class="row">
+  <div class="cTabWrapper cBlackBG">
+    <div class="row">
+      <!-- Left Column -->
+      <div class="col-12 col-md-4">
+        <p>
+          The MCP Hub is a centralized, searchable portal that allows AI agent developers 
+          to easily discover, explore, and consume available MCP servers. 
+          It serves as a curated catalog of tools and services designed for seamless 
+          integration into agent workflows, featuring rich metadata, usage examples, 
+          and ownership details to improve discoverability. With built-in integration 
+          support and an optimized developer experience, the MCP Hub simplifies finding 
+          the right APIs and tools for building intelligent agents.
+        </p>
+      </div>
+
+      <!-- Right Column -->
+      <div class="col-12 col-md-8">
+        <div class="cImageHolder">
+          <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/MCP-HUB-Devportal.webp" 
+               alt="MCP Hub" 
+               class="img-fluid" 
+               loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+</section>
+
+
+
+   </section>
+
+   <section class=" cScrollSectionMobile cTransparentBG cAIforCodeSection">
+    <div class="d-flex justify-content-center list-unstyled" style="width: 100%; min-height: 96px;">
+      <span class="cCodeIocn AIforCode"><span class="pcolorhigh">AI</span> for API Management</span>
+   </div>
+   <div class="container">
+    <div class="row">
+         <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
+            <!-- <h2>Power the software development life cycle </h2> -->
+             <p style="text-align: center;">WSO2 integrates AI into the API lifecycle—making it easier to design, test, discover, and customize APIs with less manual effort. Leverage features that reduce repetitive tasks, improve accuracy, and help teams move faster.</p>
+         <br>
+            </div>
+      
+      </div>
+    </div>
+</section>
+
+<section class="cScrollSectionMobile  cAlignCenter">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 cDesign d-flex justify-content-center">
+            
+            <div class="cMainContentBlock cTransparentBG cAlignCenter text-center">
+  <h2>Smart Automation for Every API Team</h2>
+
+  <!-- Centered HR -->
+  <hr class="mx-auto my-3 w-25">
+
+  <p>
+    Infuse AI into your API lifecycle—automate creation, testing, discovery, and developer experience.
+  </p>
+</div>
+
+         </div>
+     </div>
+     
+     <div class="row align-items-stretch">
+  <!-- Spec Generation -->
+  <div class="col-12 col-md-3">
+    <div class="cInAshBox text-center h-100">
+      <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/Spec-Generation.webp" 
+           alt="Spec Generation" 
+           class="img-fluid mb-3" 
+           width="60" 
+           height="60" 
+           loading="lazy">
+      <h4>Spec Generation</h4>
+      <p>Turn prompts into API specs</p>
+    </div>
+  </div>
+
+  <!-- Natural Language Testing -->
+  <div class="col-12 col-md-3">
+    <div class="cInAshBox text-center h-100">
+      <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/Natural-Language-Testing.webp" 
+           alt="Natural Language Testing" 
+           class="img-fluid mb-3" 
+           width="60" 
+           height="60" 
+           loading="lazy">
+      <h4>Natural Language Testing</h4>
+      <p>Test APIs with plain English</p>
+    </div>
+  </div>
+
+  <!-- Smart Discovery -->
+  <div class="col-12 col-md-3">
+    <div class="cInAshBox text-center h-100">
+      <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/Smart-Discovery.webp" 
+           alt="Smart Discovery" 
+           class="img-fluid mb-3" 
+           width="60" 
+           height="60" 
+           loading="lazy">
+      <h4>Smart Discovery</h4>
+      <p>Personalized API suggestions</p>
+    </div>
+  </div>
+
+  <!-- AI Assisted DevPortal Theming -->
+  <div class="col-12 col-md-3">
+    <div class="cInAshBox text-center h-100">
+      <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/AI-Assisted-DevPortal-Theming.webp" 
+           alt="AI Assisted DevPortal Theming" 
+           class="img-fluid mb-3" 
+           width="60" 
+           height="60" 
+           loading="lazy">
+      <h4>AI Assisted DevPortal Theming</h4>
+      <p>Generate portal themes with AI help</p>
+    </div>
+  </div>
+</div>
+
+
+      
+   </div>
+</section>
+
+<section class="cScrollSectionMobile  cAlignCenter">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 cDesign d-flex justify-content-center">
+          
+            <div class="cMainContentBlock cTransparentBG cAlignCenter text-center">
+  <h2>AI-Powered API Governance</h2>
+
+  <!-- Centered HR -->
+  <hr class="mx-auto my-3 w-25">
+
+  <p>
+    Organizations often maintain their own API guidelines and best practices, and many follow industry standards as well. 
+    With AI Governance, you can reuse these natural language documents, whether internal or external, to automatically 
+    validate your APIs for design consistency, security, and compliance.
+  </p>
+</div>
+
+         </div>
+     </div>
+     <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 justify-content-center g-4">
+  <!-- Natural Language Policies -->
+  <div class="col">
+    <div class="cInAshBoxAI text-center h-100">
+      <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/Natural-Language-Policies.webp" 
+           alt="Natural Language Policies" 
+           class="img-fluid mb-3" 
+           width="60" 
+           height="60" 
+           loading="lazy">
+      <h4>Natural Language Policies</h4>
+      <p>Leverage existing organizational or industry guidelines written in plain English</p>
+    </div>
+  </div>
+
+  <!-- Automated Validation -->
+  <div class="col">
+    <div class="cInAshBoxAI text-center h-100">
+      <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/Automated-Validation.webp" 
+           alt="Automated Validation" 
+           class="img-fluid mb-3" 
+           width="60" 
+           height="60" 
+           loading="lazy">
+      <h4>Automated Validation</h4>
+      <p>Check APIs against defined rules without manual effort</p>
+    </div>
+  </div>
+
+  <!-- Design and Quality Checks -->
+  <div class="col">
+    <div class="cInAshBoxAI text-center h-100">
+      <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/Design-and-Quality-Checks.webp" 
+           alt="Design and Quality Checks" 
+           class="img-fluid mb-3" 
+           width="60" 
+           height="60" 
+           loading="lazy">
+      <h4>Design and Quality Checks</h4>
+      <p>Enforce best practices and catch issues early</p>
+    </div>
+  </div>
+
+  <!-- Security and Compliance -->
+  <div class="col">
+    <div class="cInAshBoxAI text-center h-100">
+      <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/Security-and-Complianc.webp" 
+           alt="Security and Compliance" 
+           class="img-fluid mb-3" 
+           width="60" 
+           height="60" 
+           loading="lazy">
+      <h4>Security and Compliance</h4>
+      <p>Prevent policy violations before deployment</p>
+    </div>
+  </div>
+
+  <!-- Governance Insights -->
+  <div class="col">
+    <div class="cInAshBoxAI text-center h-100">
+      <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/Governance-Insights.webp" 
+           alt="Governance Insights" 
+           class="img-fluid mb-3" 
+           width="60" 
+           height="60" 
+           loading="lazy">
+      <h4>Governance Insights</h4>
+      <p>Track adherence, trends, and gaps across your API landscape</p>
+    </div>
+  </div>
+</div>
+
+
+      
+   </div>
+</section>
+
+<section class="cOtherSections cVN">
+  <div class="container">
+    <!-- Heading -->
+    <div class="row justify-content-center text-center">
+      <div class="col-12">
+        <div class="cResourceSection">
+          <h2>WSO2 API Management</h2>
+          <p>
+            From governance to GenAI integrations, WSO2 API Management capabilities give you the<br>
+            power to manage APIs in the age of AI. Start building smarter today.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Products -->
+    <div class="row g-4 align-items-stretch">
+      <div class="col-12 col-md-6">
+        <div class="cHighlighted cGrayBG h-100">
+          <h3>WSO2 API Manager</h3>
+          <p>100% open source, downloadable software that you can run anywhere.</p>
+          <a class="learn-more" 
+             href="https://wso2.com/api-manager/" 
+             target="_blank" 
+             rel="noopener" 
+             aria-label="Try WSO2 API Manager">
+            Try WSO2 API Manager
+            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="24" viewBox="0 0 30 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="4" y1="12" x2="24" y2="12"></line>
+              <polyline points="16 5 24 12 16 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <div class="cHighlighted cGrayBG h-100">
+          <h3>Bijira by WSO2</h3>
+          <p>A scalable API management platform as a service that we manage for you.</p>
+          <a class="learn-more" 
+             href="https://wso2.com/bijira/" 
+             target="_blank" 
+             rel="noopener" 
+             aria-label="Try Bijira">
+            Try Bijira
+            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="24" viewBox="0 0 30 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="4" y1="12" x2="24" y2="12"></line>
+              <polyline points="16 5 24 12 16 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="cWtoG_gradien cResourceSection">
+  <div class="cFooterScrollTopElement cElementHeight"></div>
+  <div class="cFooterScroll"></div>
+
+  <div class="container">
+    <!-- Heading and Text -->
+    <div class="row justify-content-center text-center">
+      <div class="col-12">
+        <div class="cMainContentBlock">
+          <h2>AI at the Heart of Your Enterprise</h2>
+          <p>
+            WSO2 uses AI across our API management, identity and access management, 
+            integration, and internal developer platform products to empower businesses 
+            to seamlessly infuse AI into your applications, and accelerate your teams 
+            with capabilities that are open, scalable, and governed.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="row justify-content-center mt-4">
+      <div class="col-auto">
+        <a class="learn-more" 
+           href="https://wso2.ai/" 
+           target="_blank" 
+           rel="noopener" 
+           aria-label="Find out more">
+          Find out more
+          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="24" viewBox="0 0 30 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="12" x2="24" y2="12"></line>
+            <polyline points="16 5 24 12 16 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+ <style>
+    .cScrollSectionMobile .cTabWrapper {
+	border: none !important;
+	min-height: auto !important;
+	margin-bottom: 60px;
+	padding-top: 40px !important;
+	margin-top: 40px !important;
+}
+
+.cTabWrapper {
+	border-left: 1px solid #aaa;
+	padding-top: 140px;
+	border-radius: 15px;
+	background-color: #fff !important;
+	padding-bottom: 40px;
+	padding-left: 40px !important;
+	padding-right: 40px !important;
+}
+
+.cGrayBG h3 {
+	font-size: 1.3rem !important;
+	line-height: 2rem !important;
+	font-weight: 500 !important;
+	color: #fff !important;
+	margin-bottom: 1rem;
+}
+.cHighlighted {
+	padding: 2rem 3rem;
+	text-align: center !important;
+}
+.cResourceSection h2 {
+	color: #ffffff !important;
+	font-weight: 700 !important;
+	margin-top: 40px;
+	font-size: 48px !important;
+	line-height: 60px !important;
+    margin: 0 0 1.5rem;
+}
+.cTransparentBG h2 {
+	color: #fff !important;
+	font-size: 1.6rem !important;
+	line-height: 2.4rem !important;
+	font-weight: 400 !important;
+}
+hr {
+	border: 0;
+	border-top: 1px solid;
+	border-image: linear-gradient(to right, transparent, #ff7300, transparent) 1;
+	margin-bottom: 0rem;
+	width: 37%;
+	margin-top: 0;
+	margin-bottom: 2rem;
+}
+ </style>

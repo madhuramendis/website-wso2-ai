@@ -1,0 +1,878 @@
+@font-face {
+        font-family: 'Plus Jakarta Sans';
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: url(https://wso2.cachefly.net/wso2/sites/all/fonts/jakarta/300.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    @font-face {
+        font-family: 'Plus Jakarta Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://wso2.cachefly.net/wso2/sites/all/fonts/jakarta/400.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    @font-face {
+        font-family: 'Plus Jakarta Sans';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://wso2.cachefly.net/wso2/sites/all/fonts/jakarta/500.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    @font-face {
+        font-family: 'Plus Jakarta Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://wso2.cachefly.net/wso2/sites/all/fonts/jakarta/600.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    @font-face {
+        font-family: 'Plus Jakarta Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://wso2.cachefly.net/wso2/sites/all/fonts/jakarta/700.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+
+    @font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://wso2.cachefly.net/wso2/sites/all/fonts/jakarta/800.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    section {
+        padding: 6rem 0;
+    }
+
+    body {
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        background-color: #f7f8fb !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        color: #000 !important;
+    }
+
+    p {
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        font-size: 1rem !important;
+        line-height: 1.6rem !important;
+        color: #494848 !important;
+        word-spacing: 3px !important;
+        letter-spacing: .008rem !important;
+    }
+
+    h1 {
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        font-size: 2.8rem !important;
+        word-spacing: 3px !important;
+        letter-spacing: .008rem !important;
+        line-height: 3.6rem !important;
+        color: #000 !important;
+        font-weight: 700 !important;
+    }
+
+    h2 {
+        font-size: 2rem !important;
+        word-spacing: 3px !important;
+        letter-spacing: .008rem !important;
+        line-height: 2.75rem !important;
+        color: #000 !important;
+        font-weight: 600 !important;
+    }
+
+    h3 {
+        font-size: 1.5rem !important;
+        word-spacing: 3px !important;
+        letter-spacing: .008rem !important;
+        line-height: 2.3rem !important;
+        color: #000 !important;
+        font-weight: 400 !important;
+    }
+
+    h4 {
+        font-size: 1.2rem !important;
+        word-spacing: 3px !important;
+        letter-spacing: .008rem !important;
+        line-height: 1.8rem !important;
+        color: #000 !important;
+        font-weight: 400 !important;
+    }
+
+    h2.TopH2 {
+        font-weight: 600;
+        font-size: 2rem;
+        color: #000;
+    }
+
+    a.cRotateButton {
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+    }
+
+    .HeaderN {
+        padding: 4rem 0;
+        background-color: #f7f8fb;
+    }
+
+    .HeaderN h1 {
+        margin-top: 2rem !important;
+    }
+
+    .cHeroImage img {
+        max-width: 100%;
+        margin-top: -2rem;
+        text-align: right;
+    }
+
+    a.cButton:hover {
+        background-color: #ff7300 !important;
+        border: solid 2px transparent;
+
+        text-decoration: none !important;
+    }
+
+    a.cContactButton {
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        font-size: 12px;
+        border-radius: 5px !important;
+        padding: 5px 18px 7px !important;
+    }
+
+
+    a.cButton,
+    a.cButtonN_Standard {
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        margin-right: 0px !important;
+        text-transform: none !important;
+        word-spacing: 3px;
+        letter-spacing: .008rem !important;
+        text-transform: none !important;
+        font-size: 21px !important;
+        padding: 10px 20px 10px !important;
+        width: 222px !important;
+        background-color: #000 !important;
+        color: #fff !important;
+        margin-bottom: 0.7rem !important;
+        letter-spacing: 0.5px !important;
+        font-weight: 500;
+        margin-top: 1rem !important;
+        display: inline-block;
+        border-radius: 5px !important;
+        text-align: center;
+        border: solid 2px transparent;
+        text-decoration: none !important;
+    }
+
+    a.cPDFButton {
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        margin-right: 0px !important;
+        text-transform: none !important;
+        word-spacing: 3px;
+        letter-spacing: .008rem !important;
+        text-transform: none !important;
+        font-size: 21px !important;
+        padding: 10px 20px 10px !important;
+        width: 222px !important;
+        background-color: #000 !important;
+        color: #fff !important;
+        margin-bottom: 0.7rem !important;
+        letter-spacing: 0.5px !important;
+        font-weight: 500;
+        margin-top: 1rem !important;
+        display: inline-block;
+        border-radius: 5px !important;
+        text-align: center;
+        border: solid 2px transparent;
+    }
+
+    a.cButtonN_StandardOutline {
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        text-transform: none !important;
+        word-spacing: 3px;
+        letter-spacing: .008rem !important;
+        display: inline-block;
+        text-align: center;
+        text-transform: none !important;
+        font-size: 21px !important;
+        padding: 10px 20px 10px !important;
+        /* width: 222px !important; */
+        font-weight: 500;
+        background-color: transparent !important;
+        color: #000 !important;
+        margin-bottom: 0.7rem !important;
+        letter-spacing: 0.5px !important;
+        border: solid 2px #000;
+        margin-top: 1rem !important;
+        border-radius: 5px !important;
+        text-decoration: none !important;
+
+    }
+
+    a.cPDFButton:hover {
+        background-color: #ff7300 !important;
+        border: solid 2px transparent;
+
+        text-decoration: none !important;
+    }
+
+    a.cButtonN_Standard:hover {
+        background-color: #ff7300 !important;
+        border: solid 2px transparent;
+
+        text-decoration: none !important;
+    }
+
+    a.cButtonN_StandardOutline:hover {
+        background-color: #ff7300 !important;
+        border: solid 2px #ff7300;
+        color: #fff !important;
+        text-decoration: none !important;
+
+    }
+
+    .cBlackBG a.cButtonN_Standard {
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        text-transform: none !important;
+        word-spacing: 3px;
+        letter-spacing: .008rem !important;
+        text-align: center;
+        display: inline-block;
+        text-transform: none !important;
+        font-size: 21px !important;
+        padding: 10px 20px 10px !important;
+        width: 222px !important;
+        background-color: #fff !important;
+        color: #000 !important;
+        margin-bottom: 0.7rem !important;
+        letter-spacing: 1px !important;
+        margin-top: 0.5rem !important;
+        border-radius: 5px !important;
+        border: solid 2px transparent;
+        font-weight: 500 !important;
+    }
+
+    .cBlackBG a.cButtonN_StandardOutline {
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        text-transform: none !important;
+        word-spacing: 3px;
+        letter-spacing: .008rem !important;
+        display: inline-block;
+        text-align: center;
+        text-transform: none !important;
+        font-size: 21px !important;
+        padding: 10px 20px 10px !important;
+        width: 222px !important;
+        font-weight: 500;
+        background-color: transparent !important;
+        color: #fff !important;
+        margin-bottom: 0.7rem !important;
+        letter-spacing: 0.5px !important;
+        border: solid 2px #fff;
+        margin-top: 0.5rem !important;
+        border-radius: 5px !important;
+    }
+
+    .cBlackBG a.cButtonN_StandardOutline:hover {
+        background-color: #ff7300 !important;
+        text-decoration: none !important;
+        color: #fff !important;
+        border: solid 2px transparent;
+    }
+
+    .cBlackBG a.cButtonN_Standard:hover {
+        background-color: #ff7300 !important;
+        text-decoration: none !important;
+        color: #fff !important;
+        border: solid 2px transparent;
+    }
+
+    a.cInlineLink {
+        text-decoration: underline !important;
+        color: #494848 !important;
+    }
+
+    /* p a,
+    li a,
+    table td a {
+        text-decoration: underline !important;
+        color: #494848 !important;
+    }
+
+    p a:hover,
+    li a:hover,
+    table td a:hover {
+        text-decoration: none !important;
+        color: #ff7300 !important;
+    } */
+
+    a.cInlineLink:hover {
+        text-decoration: none !important;
+        color: #ff7300 !important;
+    }
+
+    .cLightGreyBG {
+        background-color: #f7f8fb;
+    }
+
+    .cBlackBG h1 {
+        color: #ffffff !important;
+    }
+
+    .cBlackBG {
+        background-color: #000;
+    }
+
+    .cBlackBG h2 {
+        color: #fff !important;
+    }
+
+    .cBlackBG h3 {
+        color: #fff !important;
+    }
+
+    .cBlackBG h4 {
+        color: #fff !important;
+    }
+
+    .cBlackBG h5 {
+        color: #fff !important;
+    }
+
+    .cBlackBG p a,
+    .cBlackBG li a,
+    .cBlackBG table td a {
+        text-decoration: underline !important;
+        color: #fff !important;
+    }
+
+    .cBlackBG p a:hover,
+    .cBlackBG li a:hover,
+    .cBlackBG table td a:hover {
+        text-decoration: none !important;
+        color: #ff7300 !important;
+    }
+
+    /* .cBlackBG a.cInlineLink {
+        text-decoration: underline !important;
+        color: #fff !important;
+    }
+
+    .cBlackBG a.cInlineLink:hover {
+        text-decoration: none !important;
+        color: #ff7300 !important;
+    } */
+
+    .cBlackBG p,
+    .cBlackBG li {
+        color: #ccc !important;
+    }
+
+    .cWhiteBG {
+        background-color: #fff;
+    }
+
+
+
+
+    .cRoundedHighlightedBox {
+        padding: 30px 30px 30px 30px;
+        border-radius: 15px;
+        min-height: 357px;
+        margin-bottom: 50px;
+        text-align: center;
+        display: inline-block;
+        box-shadow: 2px 5px 10px 0 rgb(0 0 0 / 20%);
+        background-color: #ffffff;
+    }
+
+    .cRoundedHighlightedBox.cLargeBorderRadius {
+        border-radius: 15px !important;
+    }
+
+    ul.cTriangleBullet li:before {
+        content: "\2022";
+        font-size: 24px;
+        top: -2px;
+        left: 3px;
+        position: absolute;
+        color: #ff7300;
+    }
+
+    ul.cTriangleBullet li {
+        padding-left: 29px;
+        font-size: 1rem;
+        padding-bottom: 0.7rem;
+        list-style-type: none;
+        position: relative;
+    }
+
+
+
+    .cBenefitsText h3 {
+        color: #000;
+        padding-top: 0px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #c6c6c6;
+        display: block;
+        width: 100% !important;
+        padding-left: 30px;
+        float: left;
+    }
+
+    .cBenefitsIcon {
+        float: left;
+        display: inline-block;
+        width: 13%;
+    }
+
+    .cBenefitsText {
+        display: inline-block;
+        width: 85%;
+    }
+
+    .cBenefitsText p {
+        padding-left: 30px;
+        float: left;
+    }
+
+    .cBenefitsIcon img {
+        width: 100px;
+    }
+
+    .cBenefitsRow {
+        margin-bottom: 30px;
+    }
+
+    a.cOrangeMore {
+        color: #ff7300 !important;
+        font-weight: 500 !important;
+        letter-spacing: 0.5px !important;
+        font-size: 1.05rem !important;
+        background-image: url(https://wso2.cachefly.net/wso2/sites/all/2023/images/arrow-orange.png);
+        background-repeat: no-repeat !important;
+        background-size: 16px !important;
+        background-position: top 8px left 98px;
+        width: 100%;
+        display: inline-block;
+    }
+
+    a.cOrangeMore:hover {
+        background-position: top 8px left 108px;
+        text-decoration: none;
+    }
+
+    a.cOrangeMoreLengthy {
+        color: #ff7300 !important;
+        font-weight: 500 !important;
+        letter-spacing: 0.5px !important;
+        font-size: 1.1rem !important;
+        background-image: url(https://wso2.cachefly.net/wso2/sites/all/2023/images/arrow-orange.png);
+        background-repeat: no-repeat;
+        background-size: 18px !important;
+        background-position: top 8px right 502px;
+        width: 100%;
+        display: inline-block;
+    }
+
+    a.cOrangeMoreLengthy:hover {
+        background-position: top 8px right 498px;
+        text-decoration: none;
+    }
+
+    .cDarkGreyBG {
+        background-color: #000 !important;
+    }
+
+    .cDarkGreyBG h1,
+    .cDarkGreyBG h2,
+    .cDarkGreyBG h2,
+    .cDarkGreyBG h3,
+    .cDarkGreyBG h4,
+    .cDarkGreyBG h5 {
+        color: #fff !important;
+    }
+
+    .cDarkGreyBG p,
+    li {
+        color: #ccc !important;
+        font-weight: 400 !important;
+    }
+
+    li,
+    p,
+    label,
+    select {
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        color: #494848 !important;
+        word-spacing: 3px;
+        letter-spacing: .008rem !important;
+    }
+
+    .cDarkGreyBG a.cButton {
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        text-transform: none !important;
+        word-spacing: 3px;
+        letter-spacing: .008rem !important;
+        text-align: center;
+        display: inline-block;
+        text-transform: none !important;
+        font-size: 21px !important;
+        padding: 10px 20px 10px !important;
+        width: 222px !important;
+        background-color: #fff !important;
+        color: #000 !important;
+        margin-bottom: 0.7rem !important;
+        letter-spacing: 1px !important;
+        margin-top: 0.5rem !important;
+        border-radius: 5px !important;
+        border: solid 2px transparent;
+    }
+
+    .cDarkGreyBG a.cButton:hover {
+        background-color: #ff7300 !important;
+        text-decoration: none !important;
+        color: #fff !important;
+        border: solid 2px transparent;
+    }
+
+    /* .cBreadCrumsSection {
+        background-color: #f7f8fb;
+    } */
+
+    .cAlignCenter {
+        text-align: center;
+        width: 100%;
+        display: inline-block !important;
+    }
+
+    .cAlignLeft {
+        text-align: left;
+    }
+
+    .cClearN {
+        clear: both;
+    }
+
+    ul.cDisceBullet li:before {
+        content: "\2022";
+        font-size: 35px;
+        top: 4px;
+        left: 3px;
+        position: absolute;
+        color: #ff7300;
+    }
+
+    ul.cDiscBullet li {
+        padding-left: 29px;
+        font-size: 1rem;
+        padding-bottom: 0.7rem;
+        list-style-type: none;
+        position: relative;
+    }
+
+    ul.cDiscBulletSub li:before {
+        content: "\2022" !important;
+        font-size: 1rem !important;
+        top: 0px !important;
+        left: 3px !important;
+        position: absolute;
+        color: #999 !important;
+    }
+
+    ul.cDiscBulletSub {
+        margin-top: 10px;
+    }
+
+    ul.cDiscBulletSub li {
+        padding-left: 20px;
+        font-size: 1rem;
+        padding-bottom: 0.7rem;
+        list-style-type: none;
+        position: relative;
+    }
+
+    .cRemovePadding {
+        padding: 0 !important;
+    }
+
+    .cPaddingLeftZero {
+        padding-left: 0 !important;
+    }
+
+    .cPaddingRightZero {
+        padding-right: 0 !important;
+    }
+
+    .cHighlighted {
+        border-radius: 15px;
+    }
+
+    .MobileN {
+        display: none;
+    }
+
+
+    p a {
+        text-decoration: underline !important;
+        color:#494848 !important;
+    }
+    .cBlackBG p a {
+        text-decoration: underline !important;
+        color:#cccccc !important;
+    }
+    p a:hover {
+        text-decoration: none !important;
+        color: #ff7300 !important;
+    }
+
+
+
+    @media screen and (max-width: 992px) {
+        .MobileN {
+            display: block;
+        }
+
+        .DesktopN {
+            display: none;
+        }
+
+        .HeaderN {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        a.cOrangeMorex {
+            background-image: none;
+        }
+
+        section {
+            padding: 3rem 0.5rem;
+        }
+
+        .cBlackBG a.cButtonN_Standard {
+            display: block;
+            width: 100%important;
+        }
+
+        a.cButtonN_Standard {
+            display: block;
+            width: 100%important;
+        }
+
+        a.cButtonN_StandardOutline {
+            display: block;
+            width: 100%important;
+        }
+    }
+
+    /* FILTER STYLYING STARTS */
+    .cEvents2018-Filter-table-container {
+        background: #fff;
+        padding: 2em 2em 2em 2em;
+        margin-top: 15px;
+        border-radius: 15px;
+        border: solid 1px #ccc;
+        box-shadow: 2px 5px 10px 0 rgb(0 0 0 / 10%);
+    }
+
+    h3.cFilterTitle {
+        color: #000;
+        margin-bottom: 2rem !important;
+        font-weight: 600;
+        border-bottom: solid 2px #000;
+        padding-bottom: 0.5rem;
+    }
+
+    .cEvents2018-Filter-table h4 {
+        color: #000 !important;
+        font-weight: 500 !important;
+        border-top: solid 1px #ccc !important;
+        padding-bottom: 6px;
+        text-transform: none;
+    }
+
+    .cLibrary2020Nov-Filter-table-container {
+        background: #fff !important;
+        padding: 2em 2em 2em 2em;
+        margin-top: 15px;
+        border-radius: 15px;
+        border: solid 1px #ccc;
+        box-shadow: 2px 5px 10px 0 rgb(0 0 0 / 10%);
+    }
+
+    .cLibrary2020NovFilterLable {
+        font-size: 1rem;
+        line-height: 1.6rem;
+        margin-bottom: 18px;
+        color: #494848 !important;
+    }
+
+    .cLibrary2020NovFilterLable {
+        display: block;
+        position: relative;
+        padding-left: 24px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        float: left;
+        margin-right: 1em;
+        margin-bottom: 10px !important;
+        font-size: 0.95rem !important;
+        line-height: 1.6rem !important;
+    }
+
+    table.cLibrary2020Nov-Filter-InnerTable {
+        margin-bottom: 1rem;
+    }
+
+    .cLibrary2020Nov-Filter-table h4 {
+        border-top: solid 1px #ccc !important;
+        text-transform: none !important;
+        padding-top: 1rem;
+    }
+
+    .cEvents2018FilterLable {
+        color: #494848 !important;
+        font-size: 0.95rem;
+        line-height: 1.6rem;
+        margin-bottom: 10px !important;
+    }
+
+    .cLibrary2020NovFilterLable input:checked~.checkmark {
+        background-color: #ff7300;
+    }
+
+    .cLibrary2020NovFilterLable .checkmark:after {
+        left: 4px;
+        top: 1px;
+        width: 5px;
+        display: block;
+        height: 10px;
+        border: solid #fff;
+        border-width: 0 3px 3px 0;
+
+        transform: rotate(45deg);
+    }
+
+    .checkmark:after {
+        content: "";
+        position: absolute;
+    }
+
+    .checkmark {
+        position: absolute;
+        border-radius: 3px;
+        top: 5px !important;
+        left: 0;
+        height: 15px;
+        width: 15px;
+        background-color: #ffffff;
+        border: 1px solid #888 !important;
+    }
+
+.nav-link {
+
+	color: #fff !important;
+}
+.nav-link:hover {
+
+	color: #ff7300 !important;
+}
+
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 0 32px; /* Even horizontal padding */
+  height: 64px;    /* Example height for alignment */
+}
+
+.logo {
+  margin-right: 32px; /* Space between logo and nav links */
+  height: 40px;       /* Adjust to match nav height if needed */
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px; /* Even spacing between links */
+}
+
+.CodeforAI.active , .AIforCode.active {
+	top: 63px !important;
+
+    
+}
+
+footer {
+    background-color: #000 !important;
+    padding-top: 60px !important;
+    padding-top: 60px !important;
+    margin-top: 0px !important;
+}
+
+.cFooterList li {
+float: left;
+
+margin-right: 20px;
+list-style: none;
+background-color: #000 !important;
+color: #fff !important;
+font-size: 12px;
+}
+.cFooterList li a {
+    color: #fff !important;
+}
+
+.justify-content-center hr {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.cFooter {
+	padding-bottom: 3rem !important;
+	padding-top: 3rem !important;
+}
+/* ...existing code... */
+
+    /* FILTER STYLYING ENDS */
+
+    @media screen and (max-width: 728px) {
+        .cHeroImage img {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 574px) {
+
+        section {
+            padding: 3rem 0.5rem;
+        }
+    }

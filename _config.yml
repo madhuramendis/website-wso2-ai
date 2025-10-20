@@ -1,0 +1,37 @@
+url: https://wso2.ai
+title: "WSO2.ai"
+timezone: Asia/Colombo
+locale: en_US
+
+defaults:
+  - scope: { path: "" }
+    values:
+      image: /assets/social/default-og.jpg
+      twitter_card: summary_large_image
+      og_type: website
+      robots: index,follow
+
+organization:
+  name: "WSO2"
+  legalName: "WSO2 Inc."
+  url: "https://wso2.ai"
+  logo: "/assets/brand/logo.svg"
+  sameAs:
+    - "https://twitter.com/wso2"
+    - "https://www.linkedin.com/company/wso2"
+    - "https://github.com/wso2"
+
+twitter:
+  site: "@wso2"
+  creator: "@wso2"
+
+# GEO fallback if a page doesn't provide geo:
+place:
+  name: "WSO2 Headquarters"
+  latitude: 6.927079
+  longitude: 79.861244
+  address: "42 Hotel Road"
+  region: "LK-11"
+  locality: "Colombo"
+  country: "LK"
+  postal_code: "00300"

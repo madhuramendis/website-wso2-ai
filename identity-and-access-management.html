@@ -1,0 +1,3553 @@
+---
+layout: homepage
+title: "Identity Management for AI & Apps | WSO2 Identity Server"
+permalink: /identity-and-access-management/
+description: "Deliver secure SSO, MFA, passwordless, adaptive authentication, and fine-grained authorization with WSO2 Identity Server. Federate identities, manage consent, and scale CIAM for AI-powered experiences."
+image: "https://wso2.cachefly.net/wso2/sites/all/2023/images/webp/wso2-sm-banner.webp"
+image_alt: "WSO2 Identity Management Banner"
+keywords:
+  - Identity management
+  - SSO
+  - MFA
+  - Passwordless
+  - CIAM
+  - OIDC
+  - SAML
+  - SCIM
+  - Adaptive authentication
+  - Identity federation
+canonical: https://wso2.ai/identity-and-access-management/
+robots: index,follow
+og_type: article
+twitter_card: summary_large_image
+date_published: 2025-10-10
+date_modified: 2025-10-10
+author_name: "WSO2 Team"
+
+og_site_name: "WSO2"
+twitter_creator: "@wso2"
+
+faq:
+  - q: "What can I build with WSO2 Identity Server?"
+    a: "SSO across web and mobile apps, passwordless and MFA flows, social login, adaptive policies, fine-grained RBAC/ABAC, CIAM at scale, and standards-based federation."
+  - q: "Does it support open standards?"
+    a: "Yes—OIDC/OAuth 2.0, SAML 2.0, SCIM 2.0, FIDO2/WebAuthn, JWT, and more."
+  - q: "Can I do adaptive and risk-based authentication?"
+    a: "Yes, define conditional and risk signals (device, geo, velocity, IP reputation) and step up to MFA or block sessions."
+  - q: "How does it help with AI/agent use cases?"
+    a: "Give AI agents first-class identities, scopes, and policies; issue short-lived tokens; and govern machine-to-machine access."
+
+qapage:
+  question: "What is WSO2 Identity Server's role in zero-trust and CIAM?"
+  answer: "It acts as the trust and policy control plane—centralizing identities, authentication, authorization, and consent, enabling zero-trust and developer-friendly CIAM."
+
+breadcrumbs:
+  - name: "Home"
+    url: "/"
+  - name: "Products"
+    url: "/products/"
+  - name: "Identity & Access Management"
+    url: "/identity-and-access-management/"
+
+speakable: ".HeaderN h1, .cIAMIntro p"
+
+video:
+  name: "Identity Management Overview"
+  description: "See how WSO2 Identity Server enables secure SSO, MFA, and CIAM."
+  thumbnail: "/assets/video/iam-overview-thumb.jpg"
+  uploadDate: "2025-10-10"
+  duration: "PT2M10S"
+  contentUrl: "https://wso2.cachefly.net/wso2/sites/all/image_resources/IdentityManagementOverview.mp4"
+  embedUrl: "https://wso2.ai/identity-and-access-management/video/overview"
+
+itemlist:
+  - name: "Single Sign-On (SSO)"
+    url: "/identity-and-access-management/#sso"
+  - name: "Multi-Factor & Passwordless"
+    url: "/identity-and-access-management/#mfa-passwordless"
+  - name: "Adaptive & Risk-Based Auth"
+    url: "/identity-and-access-management/#adaptive-auth"
+  - name: "Social Login & Federation"
+    url: "/identity-and-access-management/#federation"
+  - name: "Fine-Grained Authorization (RBAC/ABAC)"
+    url: "/identity-and-access-management/#authorization"
+  - name: "User Provisioning (SCIM)"
+    url: "/identity-and-access-management/#provisioning"
+  - name: "Consent & Privacy"
+    url: "/identity-and-access-management/#consent"
+  - name: "Developer Experience"
+    url: "/identity-and-access-management/#devx"
+  - name: "Agent Identity for AI"
+    url: "/identity-and-access-management/#agent-identity"
+
+geo:
+  name: "WSO2 Headquarters"
+  latitude: 6.927079
+  longitude: 79.861244
+  address: "42 Hotel Road"
+  region: "LK-11"
+  locality: "Colombo"
+  country: "LK"
+  postal_code: "00300"
+
+hreflang:
+  - lang: en
+    url: https://wso2.ai/identity-and-access-management/
+---
+
+
+<style>
+  body {
+ 
+    background-color: #0A0E15 !important;
+  }
+
+  p a{
+    color: #fff !important;
+    text-decoration: none !important;
+  }
+  .error {
+    color: red !important;
+    margin-bottom: 0.7rem;
+  }
+
+  .blendmode{
+    mix-blend-mode: lighten !important;
+  }
+
+
+  .videosize{
+    max-width: 75% !important;
+  }
+
+
+
+  @keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+  .check-list {
+  list-style: none;
+  margin: 0;
+  padding-left:1rem;
+  padding-top: 1rem;
+}
+
+.check-list li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.check-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #ff7300;
+}
+
+.mainh3{
+    font-weight: 600 !important;
+    font-size: 40px !important;
+    text-align: center;
+    color: #fff !important;
+    line-height: 3.8rem !important;
+    /* width: 900px; */
+}
+
+.licontent{
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  text-align: left !important;
+}
+
+.longtitle{
+    width: 900px;
+    text-align: center;
+    display: flex;
+    margin: auto;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+img.img-fluid {
+    border-radius: 10px;
+}
+
+
+.learn-more {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    word-spacing: 2px;
+    color: #ff7300 !important;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+a, a:active, a:focus, a:visited {
+    color: inherit;
+    text-decoration: none;
+    transition: all .2s;
+}
+
+.arrow-icon {
+    margin-left: 8px;
+    width: 28px;
+    height: 19px;
+    transition: transform 0.3s ease-in-out;
+    color: #ff7300 !important;
+    margin-top: 4px;
+}
+
+.learn-more:hover {
+  color: #FFFFFF !important;
+  text-decoration: none;
+}
+
+.arrow-icon:hover {
+  color: #FFFFFF !important;
+  text-decoration: none;
+}
+
+
+
+  .clistyles{
+    background-color: #ffffff08;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+    text-align: left;
+  }
+
+  .clistylesfirst{
+    background-color: #ffffff08;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    text-align: left;
+  }
+
+  .firstt{
+    margin-top: 0rem !important;
+  }
+
+  .btnpad{
+   padding: 0rem 16rem;
+  }
+
+  .btnpad2{
+   padding: 0rem 24rem;
+  }
+
+  .clistyleslast{
+    background-color: #ffffff08;
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-align: left;
+  }
+
+  /* .secondcta2{
+    margin-right: 1rem !important;
+  } */
+
+  .secondcta{
+    color: #dc7d4d; 
+    margin-left: 1rem;
+  }
+
+  .icsize {
+    height: 85px;
+  }
+
+  .text-left{
+    text-align: left;
+  }
+
+  .icsize2 {
+    height: 110px;
+    padding: 1.5rem;
+    /* border-radius: 30px !important;
+    background: #000; */
+  }
+
+
+  .cBookmark {
+  position: absolute;
+  margin-top: 200px; /* example */
+  display:inline-block;
+}
+
+.cul{
+    text-align: left;
+}
+
+.productlogo{
+    width: 265px !important;
+    filter: invert(1);
+    border-radius: 0 !important;
+    margin-bottom: 1.5rem;
+}
+
+.productlogo2{
+    width: 185px !important;
+    /* filter: invert(1); */
+    border-radius: 0 !important;
+    margin-bottom: 1.5rem;
+}
+
+.mtopbtn{
+  margin-top: 60px !important;
+}
+
+.mtopbtn2{
+  margin-top: 10px !important;
+}
+
+.cblackcard {
+    /* background-color: #ffb1720f; */
+    /* background-color: #14171e !important; */
+    color: #fff !important;
+    text-align: left;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-image: none;
+    background-size: auto;
+    border-radius: 15px;
+    padding: 40px 40px !important;
+    box-sizing: border-box;
+    /* background-image: url(https://wso2.cachefly.net/wso2/sites/all/image_resources/bg-gradient-full-width.webp); */
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top 2rem right 0rem;
+    /* border: 2px solid #ff730024; */
+    background: radial-gradient(circle at 100% 100%, #14171e 0, #14171e 14px, transparent 14px) 0% 0% / 15px 15px no-repeat, radial-gradient(circle at 0 100%, #14171e 0, #14171e 14px, transparent 14px) 100% 0% / 15px 15px no-repeat, radial-gradient(circle at 100% 0, #14171e 0, #14171e 14px, transparent 14px) 0% 100% / 15px 15px no-repeat, radial-gradient(circle at 0 0, #14171e 0, #14171e 14px, transparent 14px) 100% 100% / 15px 15px no-repeat, linear-gradient(#14171e, #14171e) 50% 50% / calc(100% - 2px) calc(100% - 30px) no-repeat, linear-gradient(#14171e, #14171e) 50% 50% / calc(100% - 30px) calc(100% - 2px) no-repeat, linear-gradient(3deg, rgb(97 87 78 / 35%) 0%, #202527 100%);
+  }
+
+  /* .btnleft{
+    display: flex;
+  } */
+
+  .form-check-label {
+    font-size: 15px !important;
+    line-height: 24px !important;
+  }
+
+  .cardtitle{
+    font-size: 18px !important;
+    font-weight: 500 !important;
+  }
+
+  .tcenter{
+    text-align: center;
+    padding: 0;
+    
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid;
+    border-image: linear-gradient(to right, transparent, #ff7300, transparent) 1;
+    margin-bottom: 2rem;
+    width: 22%;
+  }
+
+  .hrmain {
+    border: 0;
+    border-top: 3px solid !important;
+    border-image: linear-gradient(to right, transparent, #8b8b8be0, transparent) 1 !important;
+    margin-bottom: 2rem;
+    width: 22%;
+  }
+
+  .aftertitle {
+    margin-top: 0 !important;
+  }
+
+  .pbtm{
+    padding-bottom: 0 !important;
+  }
+
+  .csizeli{
+    min-height: 276px !important;
+  }
+
+  .cbtn{
+    display: flex;
+    justify-content: center;
+  }
+  .cSuccessmsg {
+    padding: 0rem;
+    border: 1px solid #008100 !important;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+  }
+
+  .cErrormsg {
+    padding: 0rem;
+    border: 1px solid #e9e9e9 !important;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+  }
+
+  .has-float-label {
+    display: block;
+    position: relative;
+  }
+
+  .lidiv{
+    min-height: 205px;
+  }
+
+  
+
+  .has-float-label label,
+  .has-float-label>span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: text;
+    font-size: 85%;
+    opacity: 1;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    top: -1rem;
+    left: 0.75rem;
+    z-index: 3;
+    line-height: 1;
+    padding: 4px 1px 1px 1px;
+    color: #999999;
+    background-color: #ffffff !important;
+  }
+
+  .has-float-label label::after,
+  .has-float-label>span::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    background: white;
+    height: 2px;
+    top: 50%;
+    left: -0.2em;
+    right: -0.2em;
+    z-index: -1;
+  }
+
+  .has-float-label .form-control::-webkit-input-placeholder {
+    opacity: 1;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+
+  .has-float-label .form-control::-moz-placeholder {
+    opacity: 1;
+    transition: all 0.2s;
+  }
+
+  .has-float-label .form-control:-ms-input-placeholder {
+    opacity: 1;
+    transition: all 0.2s;
+  }
+
+  .has-float-label .form-control::placeholder {
+    opacity: 0;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+
+  .has-float-label .form-control:placeholder-shown:not(:focus)::-webkit-input-placeholder {
+    opacity: 0;
+  }
+
+  .has-float-label .form-control:placeholder-shown:not(:focus)::-moz-placeholder {
+    opacity: 0;
+  }
+
+  .has-float-label .form-control:placeholder-shown:not(:focus):-ms-input-placeholder {
+    opacity: 0;
+  }
+
+  .has-float-label .form-control:placeholder-shown:not(:focus)::placeholder {
+    opacity: 0;
+  }
+
+  .has-float-label .form-control:placeholder-shown:not(:focus)+* {
+    font-size: 1rem;
+    color: #000;
+    top: 0.7em;
+  }
+
+
+  .input-group .has-float-label {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    margin-bottom: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
+  .input-group .has-float-label .form-control {
+    width: 100%;
+    border-radius: 0.25rem;
+  }
+
+  .input-group .has-float-label:not(:last-child),
+  .input-group .has-float-label:not(:last-child) .form-control {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-right: 0;
+  }
+
+  .input-group .has-float-label:not(:first-child),
+  .input-group .has-float-label:not(:first-child) .form-control {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+
+
+
+
+ /* .floating-title {
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(105deg, rgba(0, 0, 0, 1) 10%, #000000 30%, #ff7300 50%, #000000 70%, rgba(0, 0, 0, 1) 90%);
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    padding: 0.5rem;
+    font-size: 2rem !important;
+    font-weight: bold;
+    z-index: 100;
+    display: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    word-spacing: 3px !important;
+    letter-spacing: .008rem !important;
+    line-height: 2.75rem !important;
+    transition: all 0.5s ease !important;
+
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }  */
+
+  .floating-title {
+  position: fixed;
+  top: 4rem;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(105deg, rgba(0, 0, 0, 1) 10%, #000000 30%, #ff7300 50%, #000000 70%, rgba(0, 0, 0, 1) 90%);
+  color: #ffffff !important;
+  font-weight: bold !important;
+  padding: 0.5rem;
+  font-size: 2rem !important;
+  z-index: 100;
+  display: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  word-spacing: 3px !important;
+  letter-spacing: .008rem !important;
+  line-height: 2.75rem !important;
+  pointer-events: auto;
+  animation: slideFadeIn 0.6s ease forwards;
+}
+
+
+  @keyframes textFadeSlideScale {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.floating-title span {
+  display: inline-block;
+  animation: textFadeSlideScale 0.8s ease-in-out both;
+}
+
+
+  
+
+
+
+  .successtext {
+    color: #007d00 !important;
+    font-size: 16px !important;
+    text-align: center;
+    padding: 0 !important;
+  }
+
+
+
+
+
+
+
+  .floating-title.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+
+  .cNSubscribe {
+    border-radius: 20px;
+    border: none;
+    padding: 2.5rem;
+    padding-top: 3.5rem !important;
+    background-color: #ffffff;
+    width: 600px;
+    box-shadow: 0px 0px 98px -40px rgb(235, 142, 0) !important;
+  }
+
+  .marzero {
+    margin-bottom: 0 !important;
+  }
+
+  .successicon,
+  .erroricon {
+    width: 30px;
+    margin: 1rem;
+  }
+
+  .marzerop {
+    margin-bottom: 0 !important;
+  }
+
+  .form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    height: 48px;
+    margin-bottom: 1.5rem;
+  }
+
+
+  .form-check {
+    font-size: 0.9rem;
+    color: #465867;
+  }
+
+  .form-check {
+    position: relative;
+    display: block;
+    padding-left: 1.25rem;
+  }
+
+  .form-check-input {
+    position: absolute;
+    margin-top: .3rem;
+    margin-left: 0rem;
+  }
+
+
+  .cBottomSubscribe {
+    letter-spacing: 0;
+    font-size: 19px !important;
+    background: linear-gradient(90deg, #e68d4f 15%, #dc7d4d 30%, #e16231 70%);
+    line-height: inherit;
+    letter-spacing: 0.5px !important;
+    text-align: center;
+    padding: 11px 25px;
+    display: inline-block;
+    text-transform: none;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-left: 0rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    color: #fff !important;
+    width: 240px;
+    word-spacing: 3px;
+    font-size: 19px;
+  }
+
+
+
+
+
+  .cHeroImage img {
+    /* max-width: 480px; */
+    margin-top: -2rem;
+    text-align: right;
+    width: 100%;
+  }
+
+  .align {
+    display: flex;
+    justify-content: center;
+  }
+
+  .smallp {
+    font-size: 1rem !important;
+  }
+
+  .navalign {
+    padding: 10px 15px !important;
+  }
+
+  li {
+    color: #7e7c7c !important;
+  }
+
+  .hr2 {
+    border-top: 2px solid !important;
+    border-image: linear-gradient(to right, transparent, #8b8b8bb3, transparent) 1 !important;
+    margin-bottom: 0rem !important;
+    margin-top: 8.7rem !important;
+    width: 70% !important;
+  }
+
+  .text-center {
+    /* padding: 0rem 7rem !important; */
+    text-align: center !important;
+  }
+
+  .btncenter {
+    display: flex;
+    justify-content: center;
+  }
+
+  .padbottom {
+    padding-bottom: 60px !important;
+  }
+
+  .remdesk {
+    display: none;
+  }
+
+  .lastimg {
+    margin-bottom: 0 !important;
+  }
+
+  .mobileon {
+    display: none;
+  }
+
+  .pcolorhigh {
+    color: #e16231;
+  }
+
+  .boldp {
+    font-weight: 500;
+    color: #fff;
+  }
+
+  .Gtextm {
+    background: rgb(235, 82, 42);
+    background: linear-gradient(90deg, #e68d4f 15%, #dc7d4d 30%, #e16231 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    min-height: 64px;
+  }
+
+
+  .sidemtop {
+    margin-top: 4.3rem !important;
+
+  }
+
+  .sidemtop3 {
+    margin-top: 5rem !important;
+
+  }
+
+  .tabcon {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    max-width: 711px !important;
+    background: #14171e;
+    border-radius: 10px;
+    padding: 0rem;
+  }
+
+  .wrappad {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .tabcon2 {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    max-width: 740px !important;
+    background: #14171e;
+    border-radius: 10px;
+    padding: 0rem;
+  }
+
+  .sidemtop2 {
+    margin-top: 4.3rem !important;
+
+  }
+
+  .afterh2 {
+    /* margin-top: 50px !important; */
+  }
+
+  .deskimgcenter {
+    display: flex;
+    justify-content: center;
+  }
+
+  .mbtitle {
+    /* margin-bottom: 2rem !important; */
+  }
+
+  .mobileonly {
+    display: none;
+  }
+
+  .vmobonly{
+    display: none !important;
+  }
+
+  .bgcol {
+    /* background-color: #000;
+    border-radius: 20px; */
+  }
+
+  .imgpad {
+    padding-left: 4rem !important;
+
+  }
+
+  .imgcenter {
+    display: flex;
+    align-items: center;
+  }
+
+  .subtitle {
+    text-align: center;
+    color: #fff !important;
+    margin-top: 20px;
+    /* font-size: 1.8rem !important; */
+    font-size: 1.6rem !important;
+    line-height: 2.47rem !important;
+  }
+
+  .lefsubtitle {
+    text-align: left;
+    color: #fff !important;
+    margin-top: 20px;
+  }
+
+  .lastli {
+    padding-bottom: 0 !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .img-thumbnail {
+    max-width: 95% !important;
+    padding: 1.5rem !important;
+  }
+
+  .sub-marb {
+    margin-bottom: 4px !important;
+  }
+
+  .mar-top {
+    margin-top: 20px !important;
+  }
+
+
+  .imgsize {
+    width: 50% !important;
+  }
+
+  strong{
+    color: #9e9e9e;
+  }
+
+
+  .imgsize2 {
+    width: 390px !important;
+  }
+
+  .imgsize5 {
+    width: auto !important;
+  }
+
+  .imgsize3 {
+    width: 60% !important;
+    margin-top: 4rem !important;
+  }
+
+  .center-image {
+    display: flex;
+    justify-content: center;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    /* margin-bottom: 60px; */
+  }
+
+  .ondesk {
+    padding-left: 40px;
+  }
+
+  /* .hr3 {
+    display: none;
+  } */
+
+
+  section {
+  padding: 8rem 0 !important;
+}
+
+.hr2{
+        margin-top: 8.7rem !important;
+    }
+
+    .hr3 {
+    display: block;
+    border-top: 2px solid !important;
+    border-image: linear-gradient(to right, transparent, #8b8b8bb3, transparent) 1 !important;
+    margin-bottom: 0rem !important;
+    margin-top: 0rem !important;
+    width: 70% !important;
+  }
+
+
+  .hr4 {
+    display: block;
+    border-top: 2px solid !important;
+    border-image: linear-gradient(to right, transparent, #8b8b8b42, transparent) 1 !important;
+    margin-bottom: 5rem !important;
+    margin-top: 6rem !important;
+    width: 70% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .lastpbot{
+    margin-bottom: 60px !important;
+  }
+
+
+  .imgcenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ctext2 {
+    font-size: 1rem !important;
+  }
+
+  .mar-top2 {
+    margin-top: 2rem !important;
+  }
+
+  .text-white {
+    color: #fff !important;
+  }
+
+  .cAlignCenter {
+    text-align: center;
+    width: 100%;
+    display: inline-block !important;
+  }
+
+  .lastp {
+    margin-bottom: 0 !important;
+  }
+
+
+  .cInnerCOl {
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    border-right: 1px solid transparent;
+    border-image: linear-gradient(0.50turn, #ff7300, #ff7300, #f5e32000);
+    border-image-slice: 1;
+    display: inline-block;
+    padding-bottom: 1rem;
+    padding-right: 2rem;
+    /* height: 22%; */
+    width: 100%;
+    margin-bottom: 1.5rem;
+    /* min-height: 230px; */
+  }
+
+
+  .cBeta {
+    background: linear-gradient(159deg, rgba(131, 126, 224, 1) 28%, rgba(126, 183, 230, 1) 79%);
+    position: absolute;
+    top: -14px;
+    font-size: 12px;
+    font-weight: 700 !important;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: #000 !important;
+    right: -2px;
+  }
+
+  .HeaderN {
+    background-color: transparent !important;
+  }
+
+  .HeaderN h1 {
+    font-size: 4.4rem !important;
+    word-spacing: 3px !important;
+    letter-spacing: .008rem !important;
+    line-height: 5.6rem !important;
+    color: #000 !important;
+    font-weight: 700 !important;
+    color: #fff !important;
+  }
+
+  .HeaderN span.SubHeader{
+    color: #fff !important; 
+    font-size: 1.8rem !important; 
+    line-height: 2.4rem !important; 
+    font-weight: 400 !important; 
+    margin-bottom: 1rem; 
+    display:inline-block;
+  }
+
+
+  .HeaderN h3 {
+    color: #fff !important;
+  margin-top: 20px;
+  font-size: 1.8rem !important;
+  font-size: 1.6rem !important;
+  line-height: 2.47rem !important;
+  }
+
+  .HeaderN p,
+  p {
+    color: #7e7c7c !important;
+    font-size: 18px !important;
+    line-height: 30px !important;
+    /* padding-right: 12rem; */
+  }
+
+
+  .HeaderN {
+    padding: 7rem 0 !important;
+    background-color: #f7f8fb;
+  }
+
+
+  .cpad-top {
+    padding-top: 3rem !important;
+  }
+
+  .nav-pills .nav-link {
+    font-size: 19px !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px;
+  }
+
+  .cButtonN_Standard {
+    /* background-color: #ff7300 !important; */
+    background: linear-gradient(90deg, #e68d4f 15%, #dc7d4d 30%, #e16231 70%);
+    border: none;
+    color: #fff !important;
+    width: auto !important;
+    width: 225px !important;
+    font-size: 19px !important;
+    padding: 11px 25px !important;
+    margin-left: 0px;
+    margin-right: 5px;
+    position: relative;
+  }
+
+
+  a.cButtonN_StandardOutline{
+
+    color: #ff7300 !important;
+    border: solid 2px #ff7300;
+    margin-bottom: 0rem !important;
+    /* margin-left: 0rem !important; */
+    width: 225px !important;
+    font-size: 19px !important;
+    padding: 11px 25px !important;
+    margin-top: 0rem !important;
+    
+
+}
+
+  .cButtonN_StandardOutline:hover{
+
+    background: linear-gradient(90deg, #e68d4f 15%, #dc7d4d 30%, #e16231 70%);
+    color: #ff7300 !important;
+    border: none !important;
+    border: solid 2px #ff7300 !important;
+    padding: 10px 25px !important;
+    
+    
+
+  }
+
+  
+
+
+  .btnlast {
+    background: #000 !important;
+    color: #fff !important;
+  }
+
+
+
+  .lastcta {
+    color: #fff !important;
+    margin-bottom: 20px !important;
+    margin-top: 0.7rem !important;
+  }
+
+
+  .cLastSection {
+    /* background: linear-gradient(0.07turn, #000, #525ee2, #000) !important; */ 
+    /* padding: 10rem 0; */
+    background: linear-gradient(180deg, #0A0E15 20%, rgb(255, 115, 0) 100%, rgb(50, 22, 0) 100%);
+  }
+
+
+  .cButtonN_Standard.cIntroButton {
+    background-color: #5567d5 !important;
+    color: #fff !important;
+    width: auto !important;
+    font-size: 21px !important;
+    line-height: 12px !important;
+    padding: 20px 38px !important;
+    margin-left: 0px;
+    margin-right: 5px;
+    border: solid 2px #5567d5;
+    position: relative;
+  }
+
+  .cButtonN_Standard.cIntroButton:hover {
+    background-color: #fff !important;
+    color: #ffffff !important;
+  }
+
+  .cButtonN_Standard.cButtonN_StandardOutline {
+    width: auto !important;
+    font-size: 21px !important;
+    line-height: 12px !important;
+    padding: 20px 38px !important;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: solid 2px #5567d5;
+    color: #5567d5 !important;
+  }
+
+  .cButtonN_Standard.cButtonN_StandardOutline:hover {
+    background-color: #fff !important;
+    color: #000 !important;
+    border: solid 2px #fff !important;
+
+  }
+
+
+  h2.cOutsideBoxH2 {
+    margin: 20px 0 50px 0;
+    text-align: center;
+    /* font-size: 2.5rem !important; */
+    font-size: 40px !important;
+    font-weight: 600 !important;
+    line-height: 3.5rem !important;
+  }
+
+  h2.cOutsideBox {
+    margin: 0px 0 0px 0;
+    text-align: center;
+    font-size: 26px !important;
+    /* font-size: 2.5rem !important; */
+    font-weight: 600 !important;
+    line-height: 3rem !important;
+    height: 50px;
+
+    border: 1px solid #ff73005e;
+    background: #2e2e2e47;
+    padding: 0px 45px;
+    border-radius: 26px;
+    margin-bottom: 1.5rem;
+  }
+
+
+
+  .cTabWrapper {
+    padding: 0px;
+    /* border: 1px solid #ff7300; */
+    /* background-color: #fff; */
+    /* border-radius: 0px 20px 20px 0; */
+    /* box-shadow: 7px 7px 10px 0 rgb(0 0 0 / 20%); */
+    /* min-height: 623px; */
+    /* min-height: 100vh; */
+    border-left: 1px solid #aaa;
+    padding-top: 140px;
+    /* border-top:2px solid #ff7300;
+   border-bottom: 2px solid #ff7300; */
+    /* background: rgb(255, 255, 255);
+   background: linear-gradient(90deg, rgba(255, 255, 255, 1) 50%, rgba(247, 248, 251, 1) 100%); */
+    border-radius: 15px;
+    background-color: #fff !important;
+    padding-bottom: 40px;
+  }
+
+  .cButtonN_Standard.cIntroButton {
+    width: auto !important;
+  }
+
+  a.cButtonN_Standard {
+    /* background-color: #ff7300 !important; */
+    background: linear-gradient(90deg, #e68d4f 15%, #dc7d4d 30%, #e16231 70%);
+    color: #ffffff !important;
+    width: auto !important;
+    line-height: inherit !important;
+    border: none !important;
+    margin: 0rem !important;
+
+
+  }
+
+  a.btnlast {
+    color: #ffffff !important;
+    background: #000;
+  }
+
+  .remlastbo {
+
+    border-bottom: none !important;
+  }
+
+  .lastbtn {
+    background: #000 !important;
+    color: #fff !important;
+  }
+
+  .lastbtn:hover {
+    color: #000 !important;
+    background-color: #fff !important;
+  }
+
+
+
+  a.cButtonN_Standard:hover {
+    /* background-color: #ffffff !important; */
+    color: #000000 !important;
+    border: none !important;
+    padding: 13px 25px !important;
+
+    border: none;
+    /* background: linear-gradient(271deg, #e68d4f 15%, #dc7d4d 30%, #e16231 70%) !important; */
+
+
+  }
+
+
+  .cTabWrapper a.cButtonN_Standard,
+  .cRoundedHighlightedBox .cButtonN_Standard {
+    /* border: 1px solid #000 !important; */
+    margin-right: 15px !important;
+  }
+
+  .cTabWrapper a.cButtonN_Standard:hover,
+  .cRoundedHighlightedBox .cButtonN_Standard:hover {
+    /* border: 1px solid #ff7300 !important; */
+  }
+
+  .cTabWrapper a.cButtonN_Standard,
+  .cRoundedHighlightedBox .cButtonN_Standard,
+  .cRoundedHighlightedBox .cButtonN_StandardOutline {
+    width: auto !important;
+    font-size: 19px !important;
+  }
+
+  .cTabWrapper.cBlackBG {
+    background-color: #131313 !important;
+  }
+
+
+
+
+  /* .cBlackBG  {} */
+
+
+
+  .wrappad li {
+    list-style: none;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: left 18px;
+    padding-left: 30px;
+    background-size: 12px;
+    padding-bottom: 18px;
+    padding-top: 0px;
+    font-size: 16px !important;
+  }
+
+  .wrappad li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 0.6em;
+    height: 0.6em;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #e68d4f 5%, #dc7d4d 20%, #e16231 90%);
+  }
+
+
+
+  .tab-menu li {
+    scroll-snap-align: start;
+    /* Snap each tab to the start of the scroll container */
+  }
+
+  .tab-menu li.active {
+    background-color: #ff7300;
+    color: white;
+
+  }
+
+  .cScrollSectionMobile .cTabWrapper {
+    border: none !important;
+    min-height: auto !important;
+    /* margin-bottom: 60px; */
+    padding-top: 40px !important;
+  }
+
+  .cScrollSectionMobile .cTabWrapper h3 {
+    color: #000 !important;
+    margin-bottom: 15px;
+  }
+
+  .cScrollSectionMobile .cRoundedHighlightedBox {
+    min-height: auto !important;
+    margin-bottom: 0;
+  }
+
+  .cScrollSectionMobile {
+    display: block;
+  }
+
+  .cScrollSection {
+    display: none;
+  }
+
+  .cWhiteBG h3 {
+    color: #000 !important;
+  }
+
+  .cTitleContainer {
+    padding: 0 40px;
+  }
+
+  .cContentPadding {
+    /* padding: 0 40px; */
+  }
+
+  .cImageIcons {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    /* border-radius: 50%; */
+  }
+
+  h4 {
+    font-weight: 400 !important;
+  }
+
+  .cLineCard {
+    padding: 0px 40px;
+    display: inline-block;
+    border-right: 1px solid #ff7300 !important;
+    text-align: center;
+  }
+
+  .cTransparentBG {
+    background-color: transparent !important;
+  }
+
+  .cTransparentBG h2 {
+    color: #fff !important;
+  }
+
+  .cTransparentBG p {
+    color: #7e7c7c !important;
+
+  }
+
+  .deskimgcenter {
+    display: flex;
+    justify-content: center;
+  }
+
+
+
+  .cGradientGR,
+  .cTabWrapper.cGradientGR {
+    background: linear-gradient(159deg, rgba(131, 126, 224, 1) 28%, rgba(126, 183, 230, 1) 79%);
+  }
+
+  .cTabWrapper.cGradientGR.cRoundedHighlightedBoxNew {
+    background: rgb(249, 178, 115);
+    background: linear-gradient(159deg, rgba(249, 178, 115, 1) 1%, rgba(254, 161, 131, 1) 20%, rgba(131, 126, 224, 1) 81%);
+  }
+
+  .cGradientGR h2,
+  .cGradientGR h3,
+  .cGradientGR p {
+    color: #000 !important;
+  }
+
+  /* a.cButton,
+  a.cButtonN_Standard {
+    max-width: none !important;
+  } */
+
+  a.cButton, a.cButtonN_Standard {
+    font-size: 19px !important;
+    padding: 13px 25px !important;
+}
+
+  .cTabWrapper.cBlackBG h4,
+  .cTransparentBG h4 {
+    /* background: #ffffff !important; */
+    /* background-color: #d1cfcf; */
+    /* -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+
+  }
+
+  .cTabWrapper.cGradientGR.cGradientGRCard {
+    padding-top: 40px !important;
+  }
+
+  /* .cTabWrapper.cGradientGR.cGradientGRCard h4 {
+    background: linear-gradient(to right, #ffffff, #7eb7e6);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  } */
+
+  h3.cTick {
+    background-image: url(https://wso2.cachefly.net/wso2/sites/all/2022/choreo/choreo-feature-bullet.svg);
+    background-repeat: no-repeat;
+    background-size: 27px;
+    padding-left: 45px;
+    text-align: left;
+    font-size: 21px !important;
+    font-weight: 500 !important;
+    background-position: top 6px left;
+    margin-bottom: 1rem;
+  }
+
+  .cBreadCrumsSection {
+    display: none;
+  }
+
+  .cHeadWrap {
+    position: static;
+
+  }
+
+  .cAPIMNav {
+    background-color: #000 !important;
+  }
+
+  .cAPIMNav img {
+    /* filter: invert(100%) brightness(200%); */
+    height: 40px;
+  }
+
+  a.navbar-brand {
+    width: 160px !important;
+    padding: 25px 0 12px;
+  }
+
+  .cSecurityCom {
+    padding: 2rem 2rem 1rem;
+    background-color: #fff;
+    border: solid 1px #f1f1f1;
+  }
+
+  .cSecurityandCompliance h2 {
+    margin-bottom: 60px !important;
+  }
+
+  .cSecurityCom.cWhiteOutlineBox {
+    background: #fff !important;
+    border-radius: 20px !important;
+    border: solid 1px #525ee2;
+  }
+
+  .cSecurityCom.cWhiteOutlineBox h4,
+  .cSecurityCom.cWhiteOutlineBox h3 {
+    color: #000 !important;
+  }
+
+  .links.inline .comment-add.first.last {
+    display: none !important;
+  }
+
+  .cSignupButtonMenu,
+  .cContactButtonMenu {
+    visibility: hidden;
+  }
+
+  h3 {
+    font-size: 1.8rem !important;
+    line-height: 2.47rem !important;
+  }
+
+
+  .cVisibleButton .cSignupButtonMenu {
+    background: #525ee2;
+    color: #fff !important;
+    border-radius: 3px;
+    line-height: 40px !important;
+    padding: 0 23px !important;
+    visibility: visible;
+    border: 1px solid #525ee2 !important;
+  }
+
+  .cVisibleButton .cContactButtonMenu {
+
+    background: #000;
+    color: #525ee2 !important;
+    border-radius: 3px;
+    line-height: 40px !important;
+    padding: 0 23px !important;
+    visibility: visible;
+    margin-left: 5px;
+    ;
+    border: 1px solid #525ee2 !important;
+
+  }
+
+  .cVisibleButton .cContactButtonMenu:hover,
+  .cVisibleButton .cSignupButtonMenu:hover {
+    border: 1px solid #fff !important;
+    background-color: #fff !important;
+    color: #000 !important;
+  }
+
+  .cButtonNav .nav-item {
+    margin-left: 15px !important;
+  }
+
+  .navbar-light .navbar-toggler {
+    color: #525ee2 !important;
+    border-color: #525ee2 !important;
+  }
+
+  .cGradientGR.zIndexFooter {
+    background: linear-gradient(164deg, rgba(82, 94, 226, 1) 0%, rgba(33, 38, 90, 1) 34%, rgba(0, 0, 0, 1) 100%);
+  }
+
+  .cScreenShot img {
+    /* filter: invert(1) hue-rotate(208deg); */
+    border: 0;
+    background-color: #fff;
+    margin: 1rem;
+    border-radius: 20px;
+  }
+
+  .cScreenShot2 img {
+    /* filter: invert(1) hue-rotate(208deg); */
+    border: 0;
+    background-color: #fff;
+    margin: 1rem;
+    border-radius: 20px;
+  }
+
+
+  .cScreenShot5 img {
+    /* filter: invert(1) hue-rotate(208deg); */
+    border: 0;
+    background-color: #fff;
+    margin: 0rem;
+    border-radius: 20px;
+    margin-top: 0px;
+    margin-bottom: 60px;
+  }
+
+  .border-line {
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    border-right: 1px solid transparent;
+    /* border-image: linear-gradient(0.42turn, #525ee2, #7eb7e6, #f5e32000); */
+    border-image-slice: 1;
+    display: inline-block;
+    padding-bottom: 1rem;
+    height: 100%;
+  }
+
+  .cScreenShot.cBlack img {
+    /* filter: invert(1) hue-rotate(208deg); */
+    border: 0;
+    background-color: #000;
+    padding: 1rem;
+    border-radius: 20px;
+    /* margin-bottom: 30px; */
+  }
+
+  .cScreenShot2.cBlack img {
+    /* filter: invert(1) hue-rotate(208deg); */
+    border: 0;
+    background-color: #000;
+    padding: 1.5rem;
+    border-radius: 20px;
+    /* margin-bottom: 30px; */
+  }
+
+
+  .cLineCard {
+    padding: 0px 40px;
+    display: inline-block;
+    border-right: 1px solid #fff !important;
+    min-height: 310px;
+    text-align: center;
+  }
+
+  .cTabWrapper.cGradientGR.cGradientGRCard .cLineCard h4,
+  .cTabWrapper.cGradientGR.cGradientGRCard .cNewCard h4 {
+    background: linear-gradient(to right, #ffffff, #ffffff);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .cLineSep {
+    border-bottom: 1px solid #000;
+    padding-top: 60px;
+    background: transparent !important;
+    margin-bottom: 60px;
+  }
+
+  .cLineCard.cLastBlock {
+    border: none !important;
+  }
+
+  .cLineCard img,
+  .cNewCard img {
+    filter: brightness(0) invert(1) !important;
+  }
+
+  .cLineSep {
+    border-bottom: 1px solid #ff7300;
+    padding-top: 60px;
+    background: #fff !important;
+    margin-bottom: 60px;
+  }
+
+  .cLineSeparator {
+    /* background: red; */
+    height: 1px;
+    padding-top: 30px;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 30px;
+  }
+
+  .cTabWrapper.cBlackBG h2,
+  .cTabWrapper.cBlackBG h3,
+  .cScrollSectionMobile .cTabWrapper h3 {
+    color: #fff !important;
+  }
+
+  .cCodeIocn {
+    /* border-radius: 0% !important; */
+    /* border: 2px solid transparent; */
+    /* border-image: linear-gradient(0.42turn, #f85fb1, #525ee2, #f5e32000); */
+    /* position: absolute; */
+    /* left: -20px; */
+    /* top: -38px; */
+    /* height: 50px !important; */
+    /* width: 149px; */
+    background: transparent;
+    text-align: center;
+    /* line-height: 18px; */
+    /* border-radius: 26px !important; */
+    /* font-weight: 700 !important; */
+    padding: 10px;
+    font-size: 14px;
+    /* width: 140px; */
+  }
+
+  .cCodeIocn.CodeforAI {
+    color: #ff7300;
+    /* border: 1px solid #f85fb1; */
+    background: #ff730024;
+    border-radius: 10px !important;
+    margin-top: 15px;
+    margin-left: 0px;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 2rem;
+
+  }
+
+  .cCodeIocn.AIforCode {
+    /* border-bottom: 3px solid #434cb7;
+	color: #434cb7; */
+    color: #ff7300;
+    /* border: 1px solid #f85fb1; */
+    background: #ff730024;
+    border-radius: 10px !important;
+  }
+
+
+  .nav-item button {
+    color: #808080 !important;
+  }
+
+  .cTransparentBG .cTabControls li {
+   margin: 0 !important;
+  }
+
+  li.nav-item {
+    border: none !important;
+
+  }
+
+  .cTransparentBG.nav-pills button.nav-link.active {}
+
+  .nav-pills .nav-link {
+    /* padding: 0 0 0px 0 !important; */
+    border-radius: 0 !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    /* border-bottom: none !important; */
+    outline: none !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+    transition: 0.8s !important;
+
+  }
+
+  .nav-pills .nav-link.active {
+    background-color: transparent !important;
+    /* border-bottom: 5px solid transparent; */
+    /* border-image-slice: 1; */
+    /* border-image: linear-gradient(0.42turn, #f85fb1, #525ee2, #f85fb1); */
+    background: linear-gradient(90deg, #e68d4f 15%, #dc7d4d 30%, #e16231 70%);
+    color: #fff !important;
+    border-radius: 5px !important;
+    padding: 8px 15px !important;
+
+
+
+  }
+
+  .cImageHolder img,
+  .cGifImage {
+    /* border: 20px solid #fff; */
+    /* border-image: linear-gradient(0.42turn, #0b0b0b, #525ee2, #000000); */
+    /* border-image-slice: 1; */
+    border-radius: 20px;
+    width: auto !important;
+    box-shadow: 0px 0px 82px -40px rgb(235, 142, 0) !important;
+    /* border: 1px solid #9191918c; */
+    height: 450px;
+
+  }
+
+
+  .cImageHolder img,
+  .cGifImage2 {
+
+    border-radius: 20px;
+    width: auto !important;
+    border: none;
+    box-shadow: 0px 0px 98px -40px rgb(235, 142, 0) !important;
+    height: 450px;
+
+  }
+
+
+  .cImageHolder4 img,
+  .cGifImage4 {
+
+    border-radius: 20px;
+    width: auto !important;
+    border: none;
+    height: 450px;
+
+  }
+
+
+  .cImageHoldertab img {
+
+    border-radius: 20px;
+    width: auto !important;
+    border: 1px solid #9191918c;
+    display: flex;
+    margin: auto;
+    box-shadow: 0px 0px 98px -40px rgb(235, 142, 0) !important;
+    height: 510px;
+
+
+  }
+
+
+  .cImageHoldertab5 img {
+
+border-radius: 1px !important;
+width: auto !important;
+border: none !important;
+display: flex;
+margin: auto;
+box-shadow: 0px 0px 98px -40px rgb(235, 142, 0) !important;
+height: 510px;
+
+
+}
+
+
+  .cImageHoldertabnew img {
+
+border-radius: 20px;
+width: auto !important;
+border: 1px solid #9191918c;
+display: flex;
+margin: auto;
+box-shadow: none !important;
+height: 510px;
+
+
+}
+
+  .cImageHoldertab2 img {
+
+    border-radius: 20px;
+    width: 55% !important;
+    border: 1px solid #9191918c;
+    display: flex;
+    margin: auto;
+
+
+  }
+
+  .cImageHoldertabsmall img {
+
+    border-radius: 20px;
+    width: 78% !important;
+    border: 1px solid #9191918c;
+    display: flex;
+    margin: auto;
+    box-shadow: 0px 0px 98px -40px rgb(235, 142, 0) !important;
+
+
+  }
+
+  .cImageHoldertabsmall2 img {
+
+border-radius: 20px;
+width: 78% !important;
+border: 1px solid #9191918c;
+display: flex;
+margin: auto;
+box-shadow: 0px 0px 98px -40px rgb(235, 142, 0) !important;
+
+
+}
+
+  .cImageHoldertabsmallnew img {
+
+border-radius: 20px;
+width: 78% !important;
+border: 1px solid #9191918c;
+display: flex;
+margin: auto;
+box-shadow: none !important;
+
+
+}
+
+.jsclass{
+    padding-left: 11rem;
+    padding-right: 11rem;
+    font-size: 16px !important;
+    margin-top: 20px;
+    color: #7e7c7c !important;
+    margin-bottom: 60px !important;
+    
+}
+
+  .cbfont {
+    padding-left: 11rem;
+    padding-right: 11rem;
+    font-size: 16px !important;
+    margin-top: 20px;
+  }
+
+
+
+  .cbfont4 {
+    font-size: 16px !important;
+    margin-top: 20px;
+    margin-bottom: 0 !important;
+    padding: 0px 0px;
+    min-height: 121px;
+    
+  }
+
+
+  .cbfont5 {
+    font-size: 16px !important;
+    margin-top: 20px;
+    margin-bottom: 0 !important;
+    min-height: 120px !important;
+    padding: 0px 0px;
+  }
+
+
+  .cbfont6 {
+    font-size: 16px !important;
+    margin-top: 20px;
+    margin-bottom: 0 !important;
+    min-height: 150px !important;
+    padding: 0px 0px;
+  }
+
+
+  .cbfont7 {
+    font-size: 16px !important;
+    margin-top: 20px;
+    margin-bottom: 0 !important;
+    padding: 0px 0px;
+    min-height: 100px !important;
+  }
+
+
+  .cbfont2 {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+    font-size: 16px !important;
+  }
+
+  .cbfont3 {
+    font-size: 16px !important;
+  }
+
+  .cfontnopad {
+    font-size: 16px !important;
+    line-height: 25px !important;
+    margin-bottom: 15px !important;
+  }
+
+  /* .cScrollSectionMobile.cTransparentBG.AIgradientLayer {
+	background: rgb(43, 10, 44);
+	background: linear-gradient(120deg, rgb(42, 1, 43) 20%, rgb(0, 0, 0) 68%, rgb(8, 10, 36)120%);
+} */
+
+
+  .cPaddingZero {
+    padding: 0 !important;
+  }
+
+  .cPriductLinks {
+    background: #000;
+    padding: 10px 15px;
+    display: inline-block;
+    border-radius: 10px;
+    margin-top: 25px;
+    color: #000;
+    width: 100%;
+    border: 1px solid #fff;
+    color: #fff !important;
+  }
+
+  .cPriductLinks:hover {
+    border: 1px solid #ff7300 !important;
+  }
+
+  .cPriductLinks span {
+    float: left;
+    margin-right: 11px;
+    line-height: 22px;
+  }
+
+  .cPriductLinks img {
+    height: 15px;
+    float: left;
+    margin-top: 4px;
+    filter: brightness(0) invert(1);
+  }
+
+  .cPriductLinks.cAsgardeo img {
+    height: 15px;
+  }
+
+  .cTabWrapper li {
+    margin-bottom: 0;
+    /* border-bottom: 1px solid #181c43 !important; */
+    background-image: url(https://wso2.cachefly.net/wso2/sites/all/image_resources/circle-list.webp);
+    background-repeat: no-repeat;
+    background-position: left 18px;
+    padding-left: 30px;
+    background-size: 12px;
+    padding-bottom: 8px;
+    padding-top: 10px;
+    font-size: 16px !important;
+  }
+
+  /* .wrappad li{
+    margin-bottom: 0;
+	
+	background-image: url(https://wso2.cachefly.net/wso2/sites/all/image_resources/circle-list.webp);
+	background-repeat: no-repeat;
+	background-position: left 18px;
+	padding-left: 30px;
+	background-size: 12px;
+	padding-bottom: 8px;
+	padding-top: 10px;
+    font-size: 16px !important;
+} */
+
+
+  .nonbg li {
+    margin-bottom: 0;
+    /* border-bottom: 1px solid #181c43 !important; */
+    background-image: url(https://wso2.cachefly.net/wso2/sites/all/image_resources/circle-list.webp);
+    background-repeat: no-repeat;
+    background-position: left 18px;
+    padding-left: 30px;
+    background-size: 12px;
+    padding-bottom: 14px;
+    padding-top: 10px;
+    font-size: 19px !important;
+    color: #7e7c7c !important;
+  }
+
+
+
+  .cTabWrapper li li {
+    background-size: 10px;
+    padding-left: 20px !important;
+  }
+
+  .cTabWrapper li:last-child {
+    /* border-bottom: 1px solid #181c43 ; */
+  }
+  
+
+  .cHeadWrap {
+    position: fixed;
+  }
+
+  .successtext {
+    color: #007d00 !important;
+    font-size: 16px !important;
+    text-align: center;
+  }
+
+  .pmlast {
+    margin-bottom: 0 !important;
+  }
+  @media screen and (max-width: 1280px) {
+
+/* section {
+  padding: 8rem 0 !important;
+}
+
+.hr2{
+        margin-top: 8.7rem !important;
+    }
+
+    .hr3 {
+    display: block;
+    border-top: 2px solid !important;
+    border-image: linear-gradient(to right, transparent, #8b8b8b, transparent) 1 !important;
+    margin-bottom: 0rem !important;
+    margin-top: 0rem !important;
+    width: 70% !important;
+  } */
+
+  .cImageHolder img,
+  .cGifImage {
+    /* border: 20px solid #fff; */
+    /* border-image: linear-gradient(0.42turn, #0b0b0b, #525ee2, #000000); */
+    /* border-image-slice: 1; */
+    border-radius: 20px;
+    width: 1000px !important;
+    box-shadow: 0px 0px 82px -40px rgb(235, 142, 0) !important;
+    /* border: 1px solid #9191918c; */
+    height: 450px;
+
+  }
+
+}
+
+@media screen and (max-width: 1257px) {
+
+  .cbfont5 {
+    min-height: 180px !important;
+  
+}
+
+
+}
+
+
+@media screen and (max-width: 1235px) {
+
+  .cbfont7 {
+  min-height: 121px !important;
+}
+
+
+
+}
+
+
+@media screen and (max-width: 1230px) {
+
+  .btnpad {
+  padding: 0rem 12rem;
+}
+
+
+.btnpad2 {
+  padding: 0rem 16rem;
+}
+
+}
+
+
+  @media screen and (max-width: 1186px) {
+
+    .bheight {
+      height: 125px;
+    }
+
+
+  }
+
+
+
+
+
+  @media screen and (max-width: 1170px) {
+
+
+    .sidemtop {
+      margin-top: 3rem !important;
+
+    }
+
+    .cardtitle {
+    min-height: 60px;
+  }
+
+  .cbfont6 {
+  min-height: 211px !important;
+
+}
+
+.cbfont7 {
+  min-height: 152px !important;
+}
+
+.lidiv {
+  min-height: 254px;
+}
+
+.cImageHolder img,
+  .cGifImage {
+    width: 900px !important;
+
+  }
+
+
+
+    .sidemtop3 {
+      /* margin-top: 2rem !important; */
+
+    }
+
+    .sidemtop2 {
+      margin-top: 3rem !important;
+
+    }
+
+  }
+
+
+  @media screen and (max-width: 1140px) {
+    .sidemtop {
+      margin-top: 2rem !important;
+    }
+
+  }
+
+
+  @media screen and (max-width: 1128px) {
+    .cbfont4 {
+      min-height: 150px;
+}
+
+  }
+
+  @media screen and (max-width: 1115px) {
+
+  .btnpad {
+    padding: 0rem 18rem;
+}
+
+
+
+}
+
+
+  @media screen and (max-width: 1111px) {
+
+    .bheight {
+      height: 152px;
+    }
+
+  }
+
+  @media screen and (max-width: 1110px) {
+
+
+    .sidemtop3 {
+      margin-top: 3rem !important;
+    }
+
+
+  }
+
+  @media screen and (max-width: 991px) {
+
+    .cImageHolder img,
+    .cGifImage {
+    width: 100% !important;
+    height: auto ;
+
+  }
+
+  .mobilebtn{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+  }
+
+  .btnmar{
+    margin-left: 1rem !important;
+  }
+
+
+
+  .cbfont7 {
+  min-height: 65px !important;
+}
+
+  .text-center {
+    padding: 0rem 1rem !important;
+  }
+
+  .cardtitle {
+    min-height: 0px;
+  }
+
+  .btnpad{
+   padding: 0rem;
+  }
+
+  .btnpad2 {
+    padding: 0rem;
+}
+
+  .cbfont4{
+      min-height: auto !important;
+      text-align: center !important;
+    }
+
+    .cbfont5{
+      min-height: auto !important;
+      text-align: center !important;
+    }
+
+    .csizeli{
+      min-height: auto !important;
+    }
+
+    .cbfont6{
+      min-height: auto !important;
+      text-align: center !important;
+    }
+
+    .lidiv{
+      min-height: auto !important;
+    }
+
+    .cblackcard {
+    margin-bottom: 2rem;
+    text-align: center !important;
+  }
+
+  .HeaderN p,
+  p {
+    padding-right: 0rem;
+  }
+
+  .pbtm{
+    padding-bottom: 6rem !important;
+  }
+
+  .secondcta{
+    margin-left: 0rem;
+    width: 100% !important;
+  }
+
+  a.cButtonN_StandardOutline{
+    /* width: 100% !important; */
+  }
+
+
+  .cImageHolder img,
+  .cGifImage2 {
+    width: auto !important;
+    height: auto !important;
+
+  }
+
+    .mobbtn {
+      display: inline-block !important;
+    }
+
+    .bheight {
+      height: auto;
+    }
+
+    .ondesk {
+      padding-left: 0px;
+    }
+
+    .sidemtop {
+      margin-top: 2rem !important;
+
+    }
+
+    .sidemtop3 {
+      margin-top: 2rem !important;
+
+    }
+
+    .sidemtop2 {
+      margin-top: 2rem !important;
+
+    }
+
+    .cInnerCOl {
+      margin-bottom: 0 !important;
+      border-image: none !important;
+    }
+
+    .cImageHolder4 img,
+    .cGifImage4 {
+
+      border-radius: 20px;
+      width: 100% !important;
+      border: none;
+      height: auto;
+
+    }
+
+    .libot {
+      padding-bottom: 14px !important;
+      margin-bottom: 0rem !important;
+    }
+
+    .mobdpnon {
+      display: none !important;
+    }
+
+    .mobulpad {
+      padding-bottom: 0 !important;
+    }
+
+    .cImageHolder {
+      width: 80% !important;
+    }
+
+
+    .cImageHoldertab img {
+
+      border-radius: 20px;
+      width: 80% !important;
+      border: 1px solid #9191918c;
+      display: flex;
+      margin: auto;
+      height: auto;
+
+    }
+
+    .cImageHoldertab5 img {
+
+border-radius: 1px !important;
+width: auto !important;
+border: none !important;
+display: flex;
+margin: auto;
+box-shadow: 0px 0px 98px -40px rgb(235, 142, 0) !important;
+height: 510px;
+
+
+}
+
+
+    .cImageHoldertab2 img {
+
+      border-radius: 20px;
+      width: 75% !important;
+      border: 1px solid #9191918c;
+      display: flex;
+      margin: auto;
+
+    }
+
+    .cImageHoldertabsmall img {
+
+      border-radius: 20px;
+      width: 90% !important;
+      border: 1px solid #9191918c;
+      display: flex;
+      margin: auto;
+
+    }
+
+
+    .cImageHoldertabsmall2 img {
+
+border-radius: 20px;
+width: 90% !important;
+border: 1px solid #9191918c;
+display: flex;
+margin: auto;
+
+}
+
+    .mobimgcenter {
+      display: flex;
+      justify-content: center;
+    }
+
+    .mobcenter2 {
+      text-align: center !important;
+      mix-blend-mode: lighten;
+    }
+
+    .mobul {
+      padding-left: 6rem;
+      padding-bottom: 1rem;
+    }
+
+  }
+
+  @media screen and (max-width: 950px) {
+    .navbar-nav.cButtonNav li {
+      margin-left: 0 !important;
+      padding-left: 0 !important;
+      margin-right: 0 !important;
+      margin-bottom: 15px !important;
+      width: 89%;
+    }
+
+    .navbar-nav.cButtonNav li a {
+      margin: 0 !important;
+    }
+
+    .cbfont {
+      padding-left: 4rem;
+      padding-right: 4rem;
+      font-size: 16px !important;
+    }
+
+    ul.cButtonNav {
+      margin-top: 10px !important;
+    }
+
+    .HeaderN {
+      padding: 8rem 0rem 8rem 0rem !important;
+    }
+
+
+
+
+    /* ai */
+
+    .cWSO2logo {
+      line-height: 3px;
+      margin-top: 2px;
+    }
+
+    .HeaderN video {
+      border-radius: 10px !important;
+    }
+
+    .cContentPadding {
+      padding: 0 0px;
+    }
+
+    .cPriductLinks {
+      margin-bottom: 20px !important;
+    }
+
+    .cScrollSectionMobile .cTabWrapper {
+      border: none !important;
+      min-height: auto !important;
+      margin-bottom: 0px;
+      padding-top: 40px !important;
+    }
+
+    .cImageHolder {
+      margin-top: 20px !important;
+    }
+
+
+    
+
+  }
+
+  @media screen and (max-width: 767px) {
+    .mobileonly {
+      display: block;
+    }
+
+    .pmlast {
+      margin-bottom: 0 !important;
+    }
+
+    
+
+
+    .cblackcard{
+      margin-bottom: 2rem;
+    }
+
+    .marzerop {
+      margin-bottom: 1.5rem !important;
+    }
+
+    .mobbot {
+      margin-bottom: 50px !important;
+    }
+
+    /* .mobmtop{
+    margin-top: 40px !important;
+   } */
+
+    .sidemtop2 {
+      margin-top: 0 !important;
+    }
+
+    .lefsubtitle {
+      margin-top: 0px !important;
+    }
+
+    .mobiletop {
+      margin-top: 0rem !important;
+    }
+
+    .imgsize3 {
+      /* width: 60% !important; */
+      margin-top: 1rem !important;
+    }
+
+    /* .sidemtop2{
+    margin-top: 1.5rem !important;
+
+} */
+
+
+    .mobileon {
+      display: block;
+    }
+
+    .desktopon {
+      display: none;
+    }
+
+    .lefsubtitle {
+      text-align: center !important;
+    }
+
+
+    .imgsize {
+      width: 50% !important;
+    }
+
+    .imgsize2 {
+      width: 50% !important;
+    }
+
+    .deskonly {
+      display: none;
+    }
+
+    .imgpad {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+
+    }
+
+
+    .cmobimg {
+      justify-content: center;
+      display: flex;
+      margin-top: 2rem;
+    }
+
+    .mobcenter {
+      text-align: center;
+    }
+
+    .mobdnone {
+      display: none !important;
+    }
+
+
+  }
+
+  @media screen and (max-width: 786px) {
+
+    .remdesk {
+      display: block;
+    }
+
+    .remmob {
+      display: none;
+    }
+
+    .cCodeIocn.CodeforAI {
+      margin-top: 0px;
+      margin-left: 0px;
+      margin-bottom: 10px;
+    }
+
+  }
+
+  @media screen and (max-width: 600px) {
+    .mobul {
+      padding-left: 4rem;
+      padding-bottom: 1rem;
+    }
+
+  }
+
+  @media screen and (max-width: 518px) {
+
+
+    .tabcon {
+      max-width: 285px !important;
+    }
+
+  }
+
+
+  @media screen and (max-width: 545px) {
+
+
+    .tabcon2 {
+      max-width: 285px !important;
+    }
+
+  }
+
+  @media screen and (max-width: 512px) {
+
+    .cImageHolder {
+      width: 100% !important;
+    }
+
+    .mobilebtn{
+        
+    }
+
+    .cImageHoldertab5 img {
+
+border-radius: 1px !important;
+border: none !important;
+height: auto;
+
+
+
+}
+
+    .mobradius{
+      border: none !important;
+      border-radius: 1px !important;
+    }
+
+    .vmobonly{
+      display: block !important;
+    }
+
+    .vdeskonly{
+      display: none;
+    }
+
+    .cNSubscribe {
+      border-radius: 20px;
+      border: none;
+      padding: 1.5rem;
+      padding-top: 3.5rem !important;
+      background-color: #ffffff;
+      width: 600px;
+      box-shadow: 0px 0px 98px -40px rgb(235, 142, 0) !important;
+    }
+
+    .moblable {
+      font-size: 14px !important;
+      line-height: 22px !important;
+    }
+
+    .secpb {
+      /* padding-bottom: 1rem !important; */
+    }
+
+    .imgsize {
+      width: 80% !important;
+    }
+
+    .imgsize2 {
+      width: 100% !important;
+    }
+
+    .cbfont {
+      padding-left: 0rem;
+      padding-right: 0rem;
+      font-size: 16px !important;
+    }
+
+
+    .cImageHoldertab img {
+
+      border-radius: 20px;
+      width: 100% !important;
+      border: 1px solid #9191918c;
+      display: flex;
+      margin: auto;
+      height: auto;
+
+    }
+
+    .cImageHoldertab2 img {
+
+      border-radius: 20px;
+      width: 90% !important;
+      border: 1px solid #9191918c;
+      display: flex;
+      margin: auto;
+
+    }
+
+    .cImageHoldertabsmall img {
+
+      border-radius: 20px;
+      width: 100% !important;
+      border: 1px solid #9191918c;
+      display: flex;
+      margin: auto;
+
+    }
+
+    .cImageHoldertabsmall2 img {
+
+border-radius: 1px !important;
+width: 100% !important;
+border: none !important;
+display: flex;
+margin: auto;
+
+}
+
+
+
+  }
+
+
+  @media screen and (max-width: 420px) {
+
+    .cImageHolder {
+      width: 100% !important;
+    }
+
+    .mobul {
+      padding-left: 2rem;
+      padding-bottom: 1rem;
+    }
+
+  }
+</style>
+
+<section class="HeaderN">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-8">
+        <!-- <span>Devant by WSO2</span> -->
+        <h1>IAM for the <span class="Gtextm">Agentic Era</span></h1>
+
+        <span class="SubHeader">Unleash AI's potential with unwavering trust.</span>
+
+        <p>WSO2 provides robust Identity and Access management for intelligent agents, interactions, and AI applications, while also leveraging AI to boost developer productivity.</p>
+        <p>Future-proof your security and accelerate innovation.</p>
+
+
+        <div class="col-sm-12 col-md-6 col-lg-6 mobileonly" style="text-align: center; padding: 1rem;">
+          <video style=" width: 100%; max-width: 430px; mix-blend-mode: lighten;" class="aos-init aos-animate" data-aos="zoom-in" autoplay="" loop="" muted="">
+            <source src="https://wso2.cachefly.net/wso2/sites/all/image_resources/iam-for-ai-hero.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="col-sm-12 col-md-12 col-lg-12 cPaddingZero mobilebtn">
+          <a rel="noopener" class="cButtonN_Standard" href="#early_access_program" aria-label="Join the Conversation">Join the Conversation</a>
+          <a target="_blank" rel="noopener" class="cButtonN_StandardOutline textcolor secondcta btnmar" href="https://wso2.com/asgardeo/" aria-label="Try on Asgardeo">Try on Asgardeo</a>
+        </div>
+
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-4 deskonly" style="text-align: center; padding-top: 4rem;">
+        <video style=" width: 100%; max-width: 430px; mix-blend-mode: lighten;" class="aos-init aos-animate" data-aos="zoom-in" autoplay="" loop="" muted="">
+          <source src="https://wso2.cachefly.net/wso2/sites/all/image_resources/iam-for-ai-hero.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<section class="cScrollSectionMobile cTransparentBG AIgradientLayer secpb comparison-section section3" style="padding-top: 1rem !important;">
+  <div class="container">
+
+    <!-- Title -->
+    <div class="row">
+      <div class="col-12">
+        <div class="d-flex justify-content-center">
+          <h2 class="cOutsideBox section-title">IAM for <span class="pcolorhigh">AI</span></h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- Subheading -->
+    <div class="row">
+      <div class="col-12">
+        <h3 class="mbtitle aftertitle mainh3">Secure your Agents. Power your innovation.</h3>
+      </div>
+    </div>
+
+    <!-- An Identity for Agents -->
+
+    <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      <h3 class="subtitle mbtitle firstt">An Identity for Agents</h3>
+      <div class="d-flex justify-content-center"> <hr></div>
+     
+      <p class="text-center justify-content-center">
+        In the age of Agentic AI, agents are first-class citizens. WSO2 IAM treats agents as primary entities, equipping them with secure, verifiable identities and role-based access control, all while keeping humans in the loop.
+      </p>
+    </div>
+  
+    <div id="aiVideoHTabGroup" class="col-sm-12 mar-top tabcon2" style="margin-bottom: 1.5rem;">
+      <ul class="nav nav-pills d-flex justify-content-center list-unstyled cTabControls cSecondTab" role="tablist">
+        <li class="nav-item navalign">
+          <button class="nav-link" id="assign-identities-tab-h" type="button">Assign identities</button>
+        </li>
+        <li class="nav-item navalign">
+          <button class="nav-link" id="issue-credentials-tab-h" type="button">Issue credentials</button>
+        </li>
+        <li class="nav-item navalign">
+          <button class="nav-link active" id="manage-privileges-tab-h" type="button">Manage privileges</button>
+        </li>
+      </ul>
+    </div>
+
+    
+  
+    <div class="col-sm-12 text-center" style="margin-top: 20px !important; margin-bottom: 20px !important;">
+      <video id="aiVideoH" class="img-fluid blendmode videosize" autoplay="" loop="" muted="">
+        <source src="https://wso2.cachefly.net/wso2/sites/all/image_resources/identity-for-agents-cmp.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  
+
+
+    <!-- Cards row 1 -->
+    <div class="row g-4">
+      <div class="col-12 col-lg-4">
+        <div class="cblackcard h-100">
+          <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/agent-lifecycle-management.webp" alt="Agent lifecycle management" width="60" height="60" class="img-fluid" loading="lazy">
+          <h4 class="cardtitle">Agent lifecycle management</h4>
+          <p class="cbfont4 text-left mb-0">End-to-end <strong>lifecycle management</strong> for AI agents from provisioning to decommissioning.</p>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="cblackcard h-100">
+          <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/credential-expiration-and-rotation.webp" alt="Credential expiration &amp; rotation" width="60" height="60" class="img-fluid" loading="lazy">
+          <h4 class="cardtitle">Credential expiration &amp; rotation</h4>
+          <p class="cbfont4 text-left mb-0">Manage credentials with time-bound access and automated rotation, mitigating misuse risks.</p>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="cblackcard h-100">
+          <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/instant-revocation.webp" alt="Instant revocation" width="60" height="60" class="img-fluid" loading="lazy">
+          <h4 class="cardtitle">Instant revocation</h4>
+          <p class="cbfont4 text-left mb-0">Provide <strong>on-demand revocation</strong> of agent credentials and access, ensuring immediate security response.</p>
+        </div>
+      </div>
+    </div>
+
+<div class="row"><div class="justify-content-center"><hr class="hr4"></div></div>
+
+    <!-- Access Management for Agents -->
+    <div class="row">
+      <div class="col-12">
+        <h3 class="subtitle mbtitle aftertitle firstt">Access Management for Agents</h3>
+        <div class="d-flex justify-content-center"> <hr></div>
+        <p class="afterh2 text-center lastpbot">
+          AI agents are increasingly embedded in business operations, handling automation, data analysis, and decision-making.
+          As their capabilities expand, securing their access to critical systems and data is crucial.
+        </p>
+      </div>
+    </div>
+
+    <!-- Cards row 2 -->
+    <div class="row g-4">
+      <div class="col-12 col-lg-4">
+        <div class="cblackcard h-100">
+          <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/just-enough-access.webp" alt="Just enough access" width="60" height="60" class="img-fluid" loading="lazy">
+          <h4 class="cardtitle">Just enough access</h4>
+          <p class="cbfont5 text-left mb-0">Apply the principle of <strong>least and just-in-time privileges</strong>, ensuring agents only access necessary resources for their task.</p>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="cblackcard h-100">
+          <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/role-based-permissions.webp" alt="Role-based permissions" width="60" height="60" class="img-fluid" loading="lazy">
+          <h4 class="cardtitle">Role-based permissions</h4>
+          <p class="cbfont5 text-left mb-0">AI agents can be granted roles, ensuring they have <strong>only the permissions required</strong> for their tasks.</p>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="cblackcard h-100">
+          <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/context-aware-access.webp" alt="Context-aware access" width="60" height="60" class="img-fluid" loading="lazy">
+          <h4 class="cardtitle">Context-aware access</h4>
+          <p class="cbfont5 text-left mb-0">Dynamic access control <strong>based on contextual factors</strong> like time, location, and data sensitivity.</p>
+        </div>
+      </div>
+    </div>
+<div class="row"><div class="justify-content-center"><hr class="hr4"></div></div>
+  
+
+    <!-- Secure On-Behalf-Of Actions -->
+    <div class="row">
+      <div class="col-12">
+        <h3 class="subtitle mbtitle firstt">Secure On-Behalf-Of Actions</h3>
+        <div class="justify-content-center"> 
+         <hr>
+        </div>
+        <p class="text-center lastpbot">
+          When agents act on behalf of users or systems, granular control is critical. WSO2 IAM provides
+          <strong>robust delegation</strong> and <strong>dynamic authorization</strong> to precisely manage and audit every 'on-behalf-of' action,
+          ensuring trust and compliance.
+        </p>
+      </div>
+    </div>
+
+    <!-- Cards row 3 -->
+    <div class="row g-4">
+      <div class="col-12 col-lg-4">
+        <div class="cblackcard h-100">
+          <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/user-authentication.webp" alt="User authentication" width="60" height="60" class="img-fluid" loading="lazy">
+          <h4 class="cardtitle">User authentication</h4>
+          <p class="cbfont6 text-left mb-0">Allow agents to request <strong>just-in-time user authentication</strong> when acting on their behalf.</p>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="cblackcard h-100">
+          <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/consent-and-authorization.webp" alt="Consent and authorization" width="60" height="60" class="img-fluid" loading="lazy">
+          <h4 class="cardtitle">Consent and authorization</h4>
+          <p class="cbfont6 text-left mb-0">Offer <strong>dynamic user consent</strong> for API access, enabling interactive or asynchronous authorization requests initiated by agents.</p>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="cblackcard h-100">
+          <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/clear-delegation-chain.webp" alt="Clear delegation chain" width="60" height="60" class="img-fluid" loading="lazy">
+          <h4 class="cardtitle">Clear delegation chain</h4>
+          <p class="cbfont6 text-left mb-0">Ensure <strong>auditable traceability</strong> by enabling tokens to carry information linking every agent action back to its identity, operating authority, and context.</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="hr4">
+
+    <!-- Agent Activity -->
+    <div class="row">
+      <div class="col-12">
+        <h3 class="mbtitle firstt mainh3">Agent Activity - Tracked and Trusted</h3>
+        <div class="justify-content-center"><hr></div>
+        
+        <p class="text-center" style="font-size: 20px; color: #bfbfbf;">
+          When AI agents operate autonomously or on behalf of users, unparalleled visibility and control are non-negotiable –
+          hence, the need for <strong>Auditing and Monitoring</strong>
+        </p>
+        <p class="text-center">WSO2 IAM provides the tooling to precisely track every agent interaction, which enables resource servers to generate comprehensive audit trails, ensuring absolute accountability from token reception and API access, to state-changing operations.</p>
+        <p class="text-center lastp">Gain the control and auditability essential for autonomous operations.</p>
+      </div>
+    </div>
+
+    <!-- CTAs -->
+    <div class="row g-4 btnpad2">
+      <div class="col-12 col-md-6">
+        <div class="cbtn mtopbtn">
+          <div class="d-flex justify-content-center">
+            <a class="learn-more" href="https://wso2.com/library/blogs/announcing-new-ai-powered-capabilities-in-asgardeo/" target="_blank" rel="noopener" aria-label="Read the Blog">
+              Read the Blog
+              <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="24" viewBox="0 0 30 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" y1="12" x2="24" y2="12"></line>
+                <polyline points="16 5 24 12 16 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="cbtn mtopbtn">
+          <div class="d-flex justify-content-center">
+            <a class="learn-more" href="https://wso2.com/asgardeo/docs/guides/agentic-ai/ai-agents/" target="_blank" rel="noopener" aria-label="Get Started">
+              Get Started
+              <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="24" viewBox="0 0 30 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" y1="12" x2="24" y2="12"></line>
+                <polyline points="16 5 24 12 16 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="hr4">
+
+    <!-- Authorization for MCP Servers -->
+    <div class="row">
+      <div class="col-12">
+        <h3 class="mbtitle firstt mainh3">Authorization for MCP Servers</h3>
+        <p class="text-center" style="font-size: 20px; color: #bfbfbf; margin-top: 2rem;">
+          Comprehensive support for Model Context Protocol (MCP) authorization, enabling secure AI application development with standardized context access.
+        </p>
+        <p class="text-center lastpbot">
+          <a href="https://modelcontextprotocol.io/" aria-label="Model Context Protocol (MCP)">Model Context Protocol (MCP)</a> standardizes how applications provide context to LLMs.
+          WSO2 provides a streamlined OAuth implementation for both MCP clients and servers, ensuring secure and compliant access for your AI applications.
+        </p>
+      </div>
+    </div>
+
+    <!-- MCP cards -->
+    <div class="row g-4">
+      <div class="col-12 col-lg-4">
+        <div class="cblackcard csizeli h-100">
+          <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/purpose-built-client-templates.webp" alt="Purpose-built client templates icon" width="60" height="60" class="img-fluid" loading="lazy">
+          <h4 class="cardtitle">Purpose-built client templates</h4>
+          <p class="cbfont7 text-left">Rapidly deploy MCP clients with best-practice configurations and standardized patterns.</p>
+          <div class="lidiv">
+            <ul class="check-list">
+              <li>Pre-configured OAuth flows for MCP integration</li>
+              <li>Best practice security configurations</li>
+              <li class="lastp">Standardized client registration patterns</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="cblackcard csizeli h-100">
+          <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/simplified-ux-for-mcp-servers.webp" alt="Simplified UX for MCP servers icon" width="60" height="60" class="img-fluid" loading="lazy">
+          <h4 class="cardtitle">Simplified UX for MCP servers</h4>
+          <p class="cbfont7 text-left">Streamline MCP server management via an intuitive, centralized interface.</p>
+          <div class="lidiv">
+            <ul class="check-list">
+              <li>Intuitive server resource representation</li>
+              <li class="lastp">Centralized server management Visual configuration tools</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="cblackcard csizeli h-100">
+          <img src="https://wso2.cachefly.net/wso2/sites/all/image_resources/auth-sdk-for-mcp.webp" alt="Auth SDK for MCP icon" width="60" height="60" class="img-fluid" loading="lazy">
+          <h4 class="cardtitle">Auth SDK for MCP</h4>
+          <p class="cbfont7 text-left">Empower MCP servers with robust token validation, access control, and compliant metadata exposure.</p>
+          <div class="lidiv">
+            <ul class="check-list">
+              <li>Expose resource metadata of the MCP server in a compliant manner</li>
+              <li>Handles token validation</li>
+              <li class="lastp">Tool-level access control</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MCP CTAs -->
+    <div class="row g-4 btnpad2">
+      <div class="col-12 col-md-6">
+        <div class="cbtn mtopbtn">
+          <div class="d-flex justify-content-center">
+            <a class="learn-more" href="https://wso2.com/library/blogs/securing-ai-interactions-crossing-the-hurdles-of-mcp-authorization/" target="_blank" rel="noopener" aria-label="Read the Blog">
+              Read the Blog
+              <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="24" viewBox="0 0 30 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" y1="12" x2="24" y2="12"></line>
+                <polyline points="16 5 24 12 16 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="cbtn mtopbtn">
+          <div class="d-flex justify-content-center">
+            <a class="learn-more" href="https://is.docs.wso2.com/en/next/guides/agentic-ai/mcp/" target="_blank" rel="noopener" aria-label="Get Started">
+              Get Started
+              <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="24" viewBox="0 0 30 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" y1="12" x2="24" y2="12"></line>
+                <polyline points="16 5 24 12 16 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<div id="floating-title" class="floating-title" style="display: block;">IAM for AI</div>
+
+
+<hr class="hr3">
+
+
+<section class="cScrollSectionMobile cTransparentBG comparison-section section4" style="padding-bottom: 0 !important;">
+  <div class="container">
+    <!-- Title -->
+    <div class="row">
+      <div class="col-12">
+        <div class="d-flex justify-content-center">
+          <h2 class="cOutsideBox section-title"><span class="pcolorhigh">AI</span> for IAM</h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- Intro -->
+    <div class="row">
+      <div class="col-12">
+        <h3 class="mbtitle firstt mainh3">Develop faster with AI-powered IAM</h3>
+      </div>
+    </div>
+
+    <!-- Asgardeo MCP Server -->
+    <div class="row">
+      <div class="col-12">
+        <h3 class="subtitle mbtitle firstt">Asgardeo MCP Server</h3>
+        <hr class="mx-auto my-3" style="width:120px;">
+        <p class="text-center" style="font-size: 20px; color: #bfbfbf;">
+          Control Asgardeo directly from your favorite developer tool with natural language instructions.
+        </p>
+        <p class="text-center">
+          Imagine: Simply type commands like <span class="boldp">“Register this React app in Asgardeo and add passkey and email OTP login”</span>
+          to instantly register applications, design MFA login flows, manage users, and much more.
+        </p>
+
+        <div class="mobimgcenter deskimgcenter">
+          <div class="cImageHoldertab5 text-center">
+            <video class="cGifImage" autoplay loop muted playsinline style="box-shadow:none; margin-bottom:0; mix-blend-mode: lighten;">
+              <source src="https://wso2.cachefly.net/wso2/sites/all/image_resources/mcp-addapp-animation.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTAs -->
+    <div class="row g-4 btnpad mt-1">
+      <div class="col-12 col-md-4">
+        <div class="cbtn mtopbtn">
+          <div class="d-flex justify-content-center">
+            <a class="learn-more" href="https://wso2.com/library/blogs/introducing-asgardeo-mcp-server/" target="_blank" rel="noopener" aria-label="Read the Blog">
+              Read the Blog
+              <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="24" viewBox="0 0 30 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" y1="12" x2="24" y2="12"></line>
+                <polyline points="16 5 24 12 16 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="cbtn mtopbtn">
+          <div class="d-flex justify-content-center">
+            <a class="learn-more" href="https://www.youtube.com/watch?v=DXaAhduoK54" target="_blank" rel="noopener" aria-label="Watch the Demo">
+              Watch the Demo
+              <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="24" viewBox="0 0 30 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" y1="12" x2="24" y2="12"></line>
+                <polyline points="16 5 24 12 16 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="cbtn mtopbtn">
+          <div class="d-flex justify-content-center">
+            <a class="learn-more" href="https://wso2.com/asgardeo/docs/quick-starts/mcp-server/" target="_blank" rel="noopener" aria-label="Get Started">
+              Get Started
+              <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="24" viewBox="0 0 30 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" y1="12" x2="24" y2="12"></line>
+                <polyline points="16 5 24 12 16 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="hr4">
+
+    <!-- AI-Assisted Registration & Login Flows -->
+  <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <h3 class="subtitle mbtitle firstt">AI-Assisted Registration &amp; Login Flows</h3>
+              <div class="d-flex justify-content-center">
+  <hr>
+              </div>
+            
+              <p class="text-center">
+                Skip manual configuration. Describe your desired registration or login experience in natural language, and let WSO2 IAM's AI instantly generate the ready-to-deploy flow.
+              </p>
+            </div>
+          
+            <div id="aiVideoTabGroup" class="col-sm-12 mar-top tabcon2" style="margin-bottom: 1.5rem;">
+              <ul class="nav nav-pills d-flex justify-content-center list-unstyled cTabControls cSecondTab" role="tablist">
+                <li class="nav-item navalign">
+                  <!-- <button class="nav-link" id="registration-tab" type="button">Registration flow builder</button> -->
+                  <button class="nav-link" id="registration-tab" type="button">Registration flow builder</button>
+                </li>
+                <li class="nav-item navalign">
+                  <!-- <button class="nav-link active" id="login-tab" type="button">Login flow builder</button> -->
+                  <button class="nav-link" id="login-tab" type="button">Login flow builder</button>
+                </li>
+                <li class="nav-item navalign">
+                  <!-- <button class="nav-link" id="branding-tab" type="button">Branding AI</button> -->
+                  <button class="nav-link active" id="branding-tab" type="button">Branding AI</button>
+                </li>
+              </ul>
+            </div>
+
+            <!-- <div id="tabDescription" class="text-center">
+                Effortlessly design secure and intuitive login experiences using natural language.
+            </div> -->
+            <!-- <div class="col-sm-12 col-md-12 col-lg-12 text-center" id="tabDescription" >
+                <p class="cbfont lastpbot">Effortlessly design secure and intuitive login experiences using natural language.</p>
+            </div> -->
+          
+            <div class="col-sm-12 text-center" style="margin-top: 50px !important;">
+              <video id="aiVideo" class="img-fluid blendmode" autoplay="" loop="" muted="" style="max-width: 100%;">
+                <source src="https://wso2.cachefly.net/wso2/sites/all/image_resources/ai-assisted-registration-login-flows-animation-v2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+        </div>
+    
+  </div>
+</section>
+
+
+
+<section class="cScrollSectionMobile cTransparentBG secpb pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <!-- <div id="early_access_program" class="cBookmark"></div> -->
+        <h2 class="cOutsideBoxH2 mt-0">WSO2’s IAM Products</h2>
+      </div>
+
+      <div class="col-12">
+        <p class="text-center lastpbot">
+          Get started with WSO2’s AI-native IAM technology. Build intelligent digital experiences while increasing developer productivity, deliver access management for agentic-AI and support MCP authorization.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <!-- Identity Server -->
+      <div class="col-12 col-lg-6">
+        <div class="cblackcard csizeli text-center h-100">
+          <img 
+            src="https://wso2.cachefly.net/wso2/sites/all/2023/images/home-identity-server.webp" 
+            alt="WSO2 Identity Server" 
+            class="img-fluid productlogo mb-3" 
+            loading="lazy"
+          >
+          <p class="tcenter">
+            A modern, open source access management solution that keeps you ahead of evolving threats and business needs.
+          </p>
+          <a class="learn-more d-inline-flex align-items-center" 
+             target="_blank" 
+             rel="noopener" 
+             href="https://wso2.com/identity-server/" 
+             aria-label="Get started with Identity Server">
+            Get started with Identity Server
+            <svg class="arrow-icon ms-2" xmlns="http://www.w3.org/2000/svg" width="30" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="4" y1="12" x2="24" y2="12"></line>
+              <polyline points="16 5 24 12 16 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Asgardeo -->
+      <div class="col-12 col-lg-6">
+        <div class="cblackcard csizeli text-center h-100">
+          <img 
+            src="https://wso2.cachefly.net/wso2/sites/all/image_resources/asgardeo-inverted-v4.webp" 
+            alt="Asgardeo" 
+            class="img-fluid productlogo2 mb-3" 
+            loading="lazy"
+          >
+          <p class="tcenter">
+            A developer-focused multi-tenant SaaS solution that provides seamless, secure authentication and user management.
+          </p>
+          <a class="learn-more d-inline-flex align-items-center" 
+             target="_blank" 
+             rel="noopener" 
+             href="https://wso2.com/asgardeo/" 
+             aria-label="Get Started with Asgardeo">
+            Get Started with Asgardeo
+            <svg class="arrow-icon ms-2" xmlns="http://www.w3.org/2000/svg" width="30" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="4" y1="12" x2="24" y2="12"></line>
+              <polyline points="16 5 24 12 16 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+  const sections = document.querySelectorAll('.comparison-section');
+  const floatingTitle = document.getElementById('floating-title');
+
+  window.addEventListener('scroll', () => {
+    let current = null;
+    let isAsgardeo = false;
+
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= 0 && rect.bottom > 0) {
+        current = section.querySelector('.section-title').innerText;
+        if (section.id === 'asgardeo-vs-oics') {
+          isAsgardeo = true;
+        }
+      }
+    });
+
+    if (current) {
+      floatingTitle.textContent = current;
+      floatingTitle.style.display = 'block';
+      floatingTitle.classList.toggle('asgardeo-style', isAsgardeo);
+    } else {
+      floatingTitle.style.display = 'none';
+    }
+  });
+</script>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 150px;
+  }
+</style>
+
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const video = document.getElementById("aiVideo");
+  
+      const tabTimings = {
+        "registration-tab": 0.0,
+        "login-tab": 10.0,
+        "branding-tab": 20.0,
+      };
+  
+      const tabRanges = [
+        { id: "registration-tab", start: 0, end: 9.9 },
+        { id: "login-tab", start: 10, end: 19.9 },
+        { id: "branding-tab", start: 20, end: 1000 },
+      ];
+  
+      Object.keys(tabTimings).forEach(tabId => {
+        const tabButton = document.getElementById(tabId);
+        tabButton.addEventListener("click", function () {
+          updateActiveTab(tabId);
+          video.currentTime = tabTimings[tabId];
+          video.play();
+        });
+      });
+  
+      video.addEventListener("timeupdate", () => {
+        const currentTime = video.currentTime;
+        const activeRange = tabRanges.find(range => currentTime >= range.start && currentTime < range.end);
+        if (activeRange) {
+          updateActiveTab(activeRange.id);
+        }
+      });
+  
+      function updateActiveTab(activeId) {
+        const container = document.getElementById("aiVideoTabGroup"); // wrapper element for tab group 1
+        if (!container) return;
+        container.querySelectorAll('.nav-link').forEach(btn => btn.classList.remove('active'));
+        const activeBtn = document.getElementById(activeId);
+        if (activeBtn) activeBtn.classList.add('active');
+      }
+    });
+  </script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const videoH = document.getElementById("aiVideoH");
+  
+      const tabTimingsH = {
+        "assign-identities-tab-h": 0.0,
+        "issue-credentials-tab-h": 8.0,
+        "manage-privileges-tab-h": 22.0,
+      };
+  
+      const tabRangesH = [
+        { id: "assign-identities-tab-h", start: 0, end: 7.9 },
+        { id: "issue-credentials-tab-h", start: 8, end: 21.9 },
+        { id: "manage-privileges-tab-h", start: 22, end: 1000 },
+      ];
+  
+      Object.keys(tabTimingsH).forEach(tabId => {
+        const tabButton = document.getElementById(tabId);
+        tabButton.addEventListener("click", function () {
+          updateActiveTabH(tabId);
+          videoH.currentTime = tabTimingsH[tabId];
+          videoH.play();
+        });
+      });
+  
+      videoH.addEventListener("timeupdate", () => {
+        const currentTime = videoH.currentTime;
+        const activeRange = tabRangesH.find(range => currentTime >= range.start && currentTime < range.end);
+        if (activeRange) {
+          updateActiveTabH(activeRange.id);
+        }
+      });
+  
+      function updateActiveTabH(activeId) {
+        const containerH = document.getElementById("aiVideoHTabGroup"); // wrapper element for tab group 2
+        if (!containerH) return;
+        containerH.querySelectorAll('.nav-link').forEach(btn => btn.classList.remove('active'));
+        const activeBtn = document.getElementById(activeId);
+        if (activeBtn) activeBtn.classList.add('active');
+      }
+    });
+
+     document.addEventListener("DOMContentLoaded", function () {
+      const videoH = document.getElementById("aiVideoH");
+  
+      const tabTimingsH = {
+        "assign-identities-tab-h": 0.0,
+        "issue-credentials-tab-h": 8.0,
+        "manage-privileges-tab-h": 22.0,
+      };
+  
+      const tabRangesH = [
+        { id: "assign-identities-tab-h", start: 0, end: 7.9 },
+        { id: "issue-credentials-tab-h", start: 8, end: 21.9 },
+        { id: "manage-privileges-tab-h", start: 22, end: 1000 },
+      ];
+  
+      Object.keys(tabTimingsH).forEach(tabId => {
+        const tabButton = document.getElementById(tabId);
+        tabButton.addEventListener("click", function () {
+          updateActiveTabH(tabId);
+          videoH.currentTime = tabTimingsH[tabId];
+          videoH.play();
+        });
+      });
+  
+      videoH.addEventListener("timeupdate", () => {
+        const currentTime = videoH.currentTime;
+        const activeRange = tabRangesH.find(range => currentTime >= range.start && currentTime < range.end);
+        if (activeRange) {
+          updateActiveTabH(activeRange.id);
+        }
+      });
+  
+      function updateActiveTabH(activeId) {
+        const containerH = document.getElementById("aiVideoHTabGroup"); // wrapper element for tab group 2
+        if (!containerH) return;
+        containerH.querySelectorAll('.nav-link').forEach(btn => btn.classList.remove('active'));
+        const activeBtn = document.getElementById(activeId);
+        if (activeBtn) activeBtn.classList.add('active');
+      }
+    });
+  </script>
